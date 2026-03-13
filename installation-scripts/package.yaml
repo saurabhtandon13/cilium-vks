@@ -1,0 +1,4035 @@
+apiVersion: data.packaging.carvel.dev/v1alpha1
+kind: Package
+metadata:
+  name: cilium.isovalent.com.1.19.0
+  namespace: vmware-system-vks-public
+  annotations:
+    addons.kubernetes.vmware.com/addon-config-definition: H4sICOBVsWkAA2FjZC55YW1sAO0923LbuJLv+QpX7VbNkzM7Z2dzpvImS06iHcvRsZyc3actiIQkjHkbkLStmTP/vgBJSSTQjQtFOU5iviQWgcat2eh7k4x9pjxnafL2jIRhmuSv78ol5QktaP76Pn4gnL4O0vjH+59IlG3IT6/uWBK+PRvJtuM0WbH1hK5YwgoB4lVMCxKSgrx9dXaWkJi+PQtYxMr4NcvTexLRpJCwXv/0+qdfXv/ctMkzEoiG9VDn+TYvaHx+f5efZ+UyYsGrPKOBhCd+ziJS0I9lkZXFDc3Tkgc0l6/Ozs7PCsLXtBhHpejP6zb1K/mQ1irvf9r/XC9lQQNOi/2P9bx/+PPP1w2w1/KXv/46r5dyLtZR0vyHTntwDcXdumm0m/rbs3+d7/vlBWfJetLs1u6pob/ekjgSrfcv/vzzrEj/V/x49vpz1eLsX2di8mJDz37+6y/RLA82NG4gpRlNRvPp5/9ctH4Us9hmYgbp8jca7FabcdGWF0xu4/n5+av232dns9tPdd+6J0sKuqZc/EJW1Ylv67fdTtUvaThKCjbqNIObyofT30vGaTgp5Y7ISYdlJP43XSfp/ufLRxqUEsnaPc/OmNjbvPuTmF+y/bhSf5RIAo9/eCKypNGCRmKHUg43wRbRfWJSBJsrCc3QyA2UfO5+yc9Jlpkb7c6pRixDUwARvJsUaZZG6Xr7K91is0JnU78gnJPtq+5vrQGVH8ha4HobG5dpGlGS7F5dp4IkkHB7SwSa7ielTIHc5cttGiQMQ1yakGVEw7fKtA5j6fOK2JIsSRClZXgEVEFG0pAuGlJXPzBy5OIz4OKjes/TMrsl6xz6Hs7+/Mu64wqoI+DcLx6YQPfjJtMAUb8EdxBWDEqStBBE+Ndf8mux1wgu1Y0EmcnfgkAydiNgXLGYtbGxmcT52Q9JGUU/7P88YF5ZbASWsoAcSFhPRFkHU0GIubgo1HadTy0ui7LdBMamIE0SsbJbFtO0fWEiQCtAKQcbHq6H3ZNngqp3m+IEj4QxSxZpcEeLOSk2OlExELeKAvTtq5643g8kg83OiX7g5llG1U6626d74ruHJXlBokjvZL5GWqTTr2PVWbvD4RkbbxPjHnvAYbFYCw7B7TYN2ZrmyH5052K9SNN7yjkLDVPaA7Pc3ArlwJtZ55QJMPNUMM6GI9vPyg6O0yzNmeCGhgFXkPUgcMqcTpzPEf6a1FZGzIssrJwDiOqCt7CWToAEd71obm4hgBX00bAJLuA4SytYEcnzayn8WKAZD4d35bKec8oHXF8u7koW0FEQpCVGB+XjRj2EqCgFuQGwrpE0j/8aXPbgjmW/CrE+ooWQg9mqw4f0XUIhXnIbVQfls/aDyGrtxy63tR+6WomNsLdzpjX1c4cLOr1gvizqZVFfcFHyqXRNX3CrTrEmOTox3rCegGFpVX2PUl+U0T/0xaksfWR5ISZ3vVcx9gIjGfgpzjrbj8zGMjtspJ1VtrHJDiyyhT12YY2dWBw7S+wAxsgKO/R3YIHtt7gFexMXxENnKTkvinyJX5nkGRC8uxvJE8Tu1ioIOpK6vKzmaoblTomDNI7TxMz6e86wBiv4bZvc6Akz5WuSsD8s3Ks3YAcMcGokbV8LQRkGUFOQQAhR+Sx10i7Y12i8h7qw7IJLzv4YCJHrvapEz+ejRHnRRL1oop6tJkreiVItQlhCuVXwVg0n+mA4Z/ui9WpD+zq1XkffQi78k+OU5GPDKA9QdmI2mPbsRYPoo+w7huYYZ2J4WYsaozAUXyJmxwMGNFx2yAVX8DIvJmksyK+HwQ+cOfDj7yUt6aLDXUHGVV4ZssOp9P9hEt/+4dJPNWWXRTphXPwhzeE3aVns8LZr0u5iYdum/Ue5M++e2OehGqmyeq+ELKpTa3Dfbf4AS5KEDywsNjOSCGaOYytZLrl5FaLBhzQv9kqaj0m0NffwdzNZrjN5K/A0mkckOW7XI7omwfYjZ2uWjAqxacuyTY/gIwDlB5hMAXjNJXbx6WQURalqeoDHY9lcgHU45rOzWJOR3PChunA5LXJAvYZ4SwCkGyPVOml2npX4uMv8hnYdLYY/FhXFshWGVtJ7ZUayGXlUMKs1LEBKzxWyJSnOrHuFngLZgqK5qcU+m78E0TLZHruqoLgNjt4aqTjIiNjlDi4DGBOyXO7N5aP4nhISTeczcQGslU8KWqvo2Hzq4dXNp9OeQN37dvw/FjJ4L+6v3DaVkK5IGSlsF85qLUueFy3/LG0BvmyA7tckH971AjvJKAi/E4q1u+5GDz8jZNSskuQ/Ux4yVfP4FMMXXNNCn35Y4MeNuOmvqgtUckw6hbF99spVvBxFaymHbuLRXtKy3N7L3bffuKdP57YOA5BuAURQJvc5Lipx+IYkayrufKn4zs1dYpJNtuLOZIFkY2/kIJ4TTsp42fmAFA4+JrlgrznRCKzfkcVpIpVQo/WaU5judketm7+LOs6xeEM338667a38Jqbzj1l3FjFLWFzGb8/+4/ATeax/+tt//dcxaJCQ4lhMSihbb44GIpBxAKyuadqQgOZS/hTCyoyK8wry2434e5NGKkfuhcs18IX48PIhpip42JoLlzto+Sp5mhZGTCwEEX5UpR2/D+peCDQX26xjAXACc9Ai6JzsWKzwbs7TJeLnHYiLY01RR2zd9ghcBaBuDBMc0uS/0yXETmk33W9O7SC+Vx0EnsuKMHE3iob5BybtL1uAjYGUDvLJy8oqtSqjPv0hTvFRXOyf06iMaSUZtGaqK5N05VGru2dPcfhSn0XHI/MXoBh6EBYVMAAgwipsqIFYRoRdBPRSmKEFmQJmSEGaa4YSpB1iCHEWGmBLAdAwS0M1sgpqhSv4gQUACnwAJqgEdcG2oogWNEiTMB+txP3+ThCXfKPpaXwIuTK7YC1jeAzy++CCN2r08OGkb8z3i7rIKgDzMgmzVGzFItrbN3oqwvYynHaarQUB/qlmL7dKAIXkP4yo1k8EC5O2bvKrATXyeLevePrql6UiiDzci2wleSXs4pf/Gt9XQhWGV0xDKZVBNhIabb7VYOLy2qCfLsRkQMxIxlR3K0SXDrpV4RiBxvLau9Zv6UrceP2Ce3eP0Ync4kDu7pIqV9qs8lYcirmxj3+VY1xxX+DycYw3PmYI+TjGIbcfJwMk1MVqAO7V3CFuWYftNHvnaTxICdjqIW6mm4cWsC0VnQzyghZB6EoR5BfiSwYqRn3E1QDhPUij4di00Ab0ZXI/PGSLV4fxwA0vI7aiwVZcRJh+EuxlmIyhl9WlxBI6GkXpw5yzeyEyrullHpDI4HqJa1frJyAZWQoeDqc5Dq7omvK7/QwTbeT00ZtRpz92NC6RMxoKXlefKU2gX+WsJyy/A1/MaCxkPScqAH+lPmH88NfoDQFWCRwB6ggoG0qiYjN3DnsHfENxvMZ8QA04iPt69rI8gWOYfDcNUzP5aBq6gb6YhvYGn0tvw9Ldvfzi6IEH32/BkOYl4w2I31E4kcFvvd7Q8G+uL1jsyzn0gvmb5kxg53cDXvS9WUnIEprnLX2xc9eXS/nsm7+UkRcItiGt49oidFoao3Hx5kGMA9kGqxaFhqdYjktPItPtiMk9hgNECXk13un24ARLgUGawDUuyrPaMOxNUWxe3hbZ9rggVxBp7ZOWD9Os5fDoRrJRf5k3tFLSiGY2J34DoXKKUTVFXPBnMYs84CSjaF6jQedhOBoL1pkP33LwRmohnxfk+0Kz+DqQzxTIYunqeOSmBVoWh2+w9YhPMqrDkR41LnKMvgwdHquGE4NWslyW/piigoBrUEhjcEHuY7zLhOW8rBzBLspwTU/poVm5k31KyD1hkew8kB4CV3UjBxyzZPSl51AmtYy7nafhpeDA5AEY9Sa+M/LCG8gAhLc2hlPiGLPK3x98DfSREHfpMhn17nedJl1HgW5PGEernp9yKP8EPiC2WeZgUdTPBtcrIANxmgncIeAR6vP1ccCwaB0MeTmdtQ2m0zBrGcy8Fq5dOM4ubOXOhjSwgfG4hl3vmZW0JucLgXSiK26zx60IH0YyfA18NYoeyDYHX13Te+3TpY2b+i2XLgcBRhXxqVylAtfAN43nOzJgtB1XcVre2VWfeL4YC2kyHaYkvBAfYBJQjiTNGM4G0B6sHWRw2pFakQMDaaElW+evg4ZX58vMSe8ellQf8nvprT+n4ioJG19ANypfqDhiyaHsS16lK3Q/ERpzoTD2M2B3FWboq/OXvo19ltxE/U7zvKT8hiI3hUWUk4A+k4iFgspOSm5Vw+P85XFqWFpsUmNf/8PY3SRVhKwn60XjFMpw8LXgIZa37ETzr4xvk6QOQzYxOkf4x0yzJjfCKUYY+AAwUoploPCx5e/cvxYyDCYUrLCYnKwYcQTIMgsFs7EopDfx2tmtkqeR1MJ8qjr7opqQvxclxxJQmVUpJo8yo0rMJvSfbGjDlzrEJQ38GJBgQ29vr96+MoAMquJHhyZI5E/N+rnjl7Kac3jhuq4tBHKSIBsxRHB3xwt/sU2CDU/1xHwQ0Lr/bLwYzaeLMuvauqAOAvHGdbEFGo617YQu1jjIScasRyP9j5N8JBiIupBV6VGtAhWtTPxN71IT1US9L6R6r7BkNYdB0U9+h7wUzXjjAqTa2xnJ8CxbFgghzaJ0G8sqP31BHJ/I9JAAquckrLzWM3AoGt4FCHfB6wvRnFHOaFUHFaS2XvZEcYZj7+cgZEy21WfPrPFnXRAeqlGviLGmgM34ZgLKvg6XTx0LPalTglQKl3E7YAeDVeZU3jYKX6+3VEY0VApbsqRbagjiEDaCZoo/gaQurdWDoX4gnNuqxOFRkAQtfsei+gu3z1+0dmpUkXe3Vp24C6ihOM00lvexCxdRZS2b3X56l/Lx9XTc7JOl56O81ti9FqfVbSbDE+U0Joy77ZZWnQmCyrJCzju/ESLyPR39c3FTRrbUGEJekWdmHBygMzBzECnxjnjL6jSy0kfv52/Cq1zTj1ezyQqSNP/W1gX8WCYOaKZSsSq9d/vqa69Uq1nX6ldXOLsXt19lwnpXbXMSbFvpWYyg9mksJCiZwefu/bib4ETZkFa7GXk0N+XhPwnrVq5TmoREHAOe40EatmhYs/4fG5963xwUnaNcyqQTg0KsyeYCDE33AtRo8ypA0zlcA8gJqhJBXdpuQQUXQ5JvlinhO+V3/4BXt1SHEumNhLNq8blbCAVoBsgPvoeg7gRdlmtsE5wW13gUL0icVQG1cOYgLzQROLtM8yEXWTNqF4tagprORzP4U60SkTYptRZ3LPuUcEoE47NXNak7sEuE1+ghBE+JtEvytilPHTeR1vldBhv9IMT7GyoXcyOOX6AkHdsS9NVHN0nycRpnvDbE2liZegmS4mVzWiUTheLIu7cQCyM63tegbBmXjLOLyeOkCcg+dJ7IumA6F6LoVFhyW2jfkpZbqMnwSQ+5ac2LF13GUttmnHWVZGgOKIrU4UWz3UHN5EojYuY286pm6JX4gXLNPU0fQsFuupbn+16s9oGgGOSWiUIKZzK9RUX4bjlbS9OUPRWYOqFqrLEQVwVxj+ZtyRX+OOoO0/n9zxfT97fjua3VTMmhZrz9AQBvnIZ5Aw6jt8QN9nCHqwuV/qgtDgNXkkV9X5o6XKcNZdvRoVx2xKnWrlfSiLATmmyrie8xBu5xW4qPNbLv3v/c1mVw3wnuZin4KKxtwLetrHE9sZZluT13czMWDSVD1PkeMbAV6F2yZ6i5xj/f0W1XQjK3vWkYDNhii/f7p0yyoBoGsRXEutBogF5nIu6b2bpWil0qp4rNTkILiq5SAskVIlnkm8qaK3OEQzTdtAUBC8HN0g0Saz1tu8UjzT4r08zg2RlmWM1ysGSmnkozr905Ye7TLjMI7NSD4OLWpeDubYglfspZXoiD+5XSjEQdbQwCHJiSdv3VNPhD5ZI73tDgbq8N6kXiEPhXgsSG6UPyMZmRTJK1lUBIjNLWXdrp9V2n0toQVe6qfzMxAqjikjzkl9Vwc05XTPJISBrT7oii241oSnJ6+ShTAE7nFsaOBn8bzae7a9GBZbZcNmJJt0AO1Q6CrgOn9KnrwAqJkfgmtejcKk1MElAJTFw/HSW0S1I41+oHYcWef0xuD75kwMeifO9o9kAdkRpJCscH7EjkU2lTw0Nxhu7OwlsBb4d8VoznxR7WNAnp4xFLBfJXNj7QlSf6cVPtgDoGTrlMaDFVLSL+II5bTpkLBGAx4VuwiIqzgWa/nD5fxGEh/r01CnifojKZbr2Hvzz5hcJO1AbHHvp7yY7Id2a26beNn5IeGL25wFcDJkyrko5dPu60HJbWDokAnObXZ6aHx7HmcP0YmEHs8ak/3HuQqnCz85KdN/7wOB/B4XHM0KA+MDXq09L0HuHD0RetVIBP9d2jZ2Q4C7cPwDn5oNd375Zs0KscuHtyQQ9UQ4++RzPH5IHG2WFoasBENP3mCzaevWDj02Ej8KOrtW4pBMfpxKRbP5PcZSHdsbMx4lLSmqGD6bT2C5rtnUehOSqVnPZdbjR/ArB9DbgxHGhBPVCXltVPPojaTQ/jGTiA2zfBjCs6KMa2fSuvk3PQhlgN04BzpHM9Aai6rnPnTko2517S5Devyn8dVQPhaUsoQNndIBTaFEV2Qwu+HXdT0GNtP2UCHSiJjWa5DgZIW2jTbqfTd/oaX4o7PFVxB6xqtQueyb6MRO+ouOd9aK3UKgPh9wNUPpAlVEpOgeo+2FyqgX1jP4F9FPe99faoSrRcpeuLcrWivFsVdg/WFR/1Zex8Oug9VVIfpQnVecNz6IM9vMTDqauKb+Cb6hIF37BklYIvHghPYO5MTIHzFPbtCxpLOvjyh3S1aq9nlXLBig756dcQ/++3/CiFry5SuBklAeyrI3GCknOaFJKkA+4ditdIm/3yos2i5/soXZJokj4k9YXgzMjFBw5uTvmhm7kXHFgAf2TmtD+u+4ml+oGbuhS9MWR1QahFlo14nHJBJFeaCR3nOiEMNIgarvxj7d5/Q6vcbMqNfgxLaSsG5AkslQHXtLQ6W3tdKjpPjvoK4LkeT5VRpE8uDTA1nkEa7ZEPwyGVGoypliwVkBbRmDrtdPoSEuBJBerHSf0gMwuJ+1QG0R0Nqw41sKtcHNTOTopmZ9WyizK5qIJorrqOwRgoT62JNdNdL2Q8gp5iKajwyoBfhq11K78mY+Y/lsU81XkHxcPJ7w7Ek1OZ1C57+2L76UcHrOhtaYLj4x2l2Zhk17S4YEm4gJJQHQD4VIPeJQRzvNxyKqT58rEuVeu8yZEuYxwGgSsJnIYvyQXVKMrsW5Ika5Z62lNz4pjXCOyKF1Fs86W+ZfdMhlcDP97+aLBMHvCwhgwe+Dz7Z870jEFDvlsdvqusUub0I2drcehR7Rat+YlAOP64Wl2X8S2XivXwQ5rlV3+vlVmXa6hzd5Fo56nqEqn3htxBxq2MHb0d9Qu+dXIyqz1666Q+3cAhrEQw1fAIoxpJTz9hdVP2mdd77sbOu9H7Q3b8IPPcJ85R0fl3VYtd4Ds9/x4dIFCqvtIKcK/7t7aE9P3WTlNAh2rtpBsGHLs4tF6lggxMqGQpJrRoq1jUs1rXMTKj+dSMb6Moc8oeM8rkXVykQWqJt6aNq6uMH/LoYMN7c2pLALubDVByNvpSAjuVllHrgtl7SPndoHwKUKfVdMkZLPKoNO/Mi315wiomsU0CF5DA/LVbzeMaW98dU/FYBVapV0H6tzl40E/Hs/k7kEtVZ7sB3O7VSag2Qw2GwN93jItvZRfiPsRKN+Vyz231jziWeYgv72lSXMasKOyVdj2jPCCNGWrkIzmSBk/53hCx0yJPGl5DoiawV45ktKvzROyvW/FVssCV+Khp2ew9Dr2OSVIVSF0Dplx7Gn9cshZsce28r7Oo8OOoWNv7+dd+2Y6evlg2SXV4u/fnitEoHDXLM5b9ONnoM5LfPf3AMsa7DiN3O0k8R2wX6ow8XpDgTotcwOCaUzd24EqD82w5LFg9jhKD6IDKLPmSqKyzGBisnpnpdxwP4EWng8DwZViDEAItl7euM2F3om6GnavCRq8YVDS0T0q1kCbb4aD1srLZqGKfiRhoXT9wJgpmXpyZSpkIiIUS2brC1OZoJXJURbwiarNulg61ViTCGSnJdMyt5fOkRuAItrEZPlEoGY9DN0Nyz5Ma3L4l3rRf5u+v5aapIX3MaDKDyrBi8HAJTpkS6nylbhzm5AGFqtY5Zz1LgX2rziG/pUvEZm+jJy8eJSqAF4+SF48SwHQe5WPkfvLT2Z75lKzpRUGevECH4NxkGF2lee4J4rus8SHoqYYLu8dOqow1cQ5jm3UexoBvBypgltdrAMbypGVOTYjjtg7DjTWASSWpLUa1HWuccnkxde+IozXcwKgZpVzzSDJW0YCqECBHWBNlvewXzG5Bs+MyT+I0u39jVmJzGooLdVBbgAyCcqWfG0pCUItlqfge7VMWqc8xVEIqRYaGakD9kkf/KCmeaBn+osQHyafJCqga5i1X3JHVHXFmsjMGhup6jgr8yLuJLhFPf88QcjQHgrlbPZ/jos/l8zQmE+dodPn4hI97RKX7gpaPR3S6fJx14+3m1ih1r6aO0epOs+1FLpAXqOhrVCU4UnI9JFg+PnmZLGVZeoI6Aso6VbWxzzE2XYvtNU8UivE9wAYxEY713XcaRCTDYn8tU8NigC3dtFhgS3skJvjQy+MirXXj0i3Oiburm2Pcnd48XXt6nkPBnPsBBjlbk2/7AAMg+4wXT8L3whzreBjMfRZY3KO5y4TlvKyO8aIM16o8NTAV6u+obTgn/zoiLBl96TmUSe20tZ2n4aUQ1uQBGInS6bAXqeCFt0aDYav3+NefV1kdfW6hyi8xSOMMDKQ1D7eHbGB2jHpDj8RmYhYr120gUCZIy5SqGijNHtyAVmnTHvb7VEtxts2Q7zim3TYNOxDLYSkVh+waFE7c/P4l2SqzKck8QfkYTUqHoVHJ4aiC2LiJ6dAblS8wq5HDpB2sR3soiBBkIJX1a0z3YrQmnWxUi3ni6HEHonvSWMUC4hQsh1ZtRGEXfAvugJepWPfyhcJdD/OAgix73XaVLnC+C+i8zAOian9tA8sHD6I1jy4f6Vl9Ci3QaRQJVdmrUR8Woep3nSY3aeolNDU9P+WQ0eur50lyKCoZn5kUYXTJz7YT8Fp8BZdcjFunVZrIsvEn+OgPI1zRZEaGTX/uGLV72AAAhLtpN4gY6BvwfK20/YycBkLx1IbqY3imFyv3Kazctl2vTDdDVxTH3DKwstI++t+dHn+RyeQigtWQKVvZUYppLO5ePoYUx3j8vbmjfGzqnf1kUcbUHLrgz7gOc0UBP+ZVNcW7JH1IxhXP0qk1oQ7qkFu1LppnrYfc+SQQk2RZpM63ifh5RhIiC+PleUn5DQV4P8P2SgCfScRCwSHDlb8OAIbUTgjZPkX7gFiS1wbTAfgVL2MVdFmZz8NrVbb7xdjVeK/0Criw3iV9oIL3x9FfcMmsHxJoqB/I4inrCNIkdEUM2OYpn97nhNs/BwA7EETA3igfi+CL2M8OQ6EsB25/3HdG76Z+OhezPdJhyia7pEN30D7p0M9gpzz07hGegOQX3j3mkz+CVTcpJpB8b192TqAyzdLLqMuyL8Vdp3XE2lB6mdNP3C2S3y9ZGK/ieF4osRniCyX+3ijxt0ti+qqQWMdv2b2ffAZwuzeayXzpKfMrgNs3li2ArbaHXrBo0kcmlFluBgv5clARQVSyR2wcqOTyp9DICNCEkKYvXkzaUC9eTOY5fL1eTL2cSjzt3U9kae7lV3WUsdXXZDqMibLvFdSDJn9Ra2hBkpBEaeK8Mb2IGHjt2C1oeS1UmNixgRiUF5vo8VsYZ9BxvRiyXgxZcO5iIW8nhbiBRkIKCypUmKU7EVwZadd0vCHJmrYcH4yta1uTzG5wANwuVnV+Jl4nxf6vXf7x/Q/LtNi86mgj9JNUtQ7AHunaBSeTXbdiDaAtAIaCtAKQYa8t/QPvASlfJ+/qccpdmotp1pSq2SBT8uFGKpQciPyAdtc8sMd1vTLTZPaN6tGPLRCkAVOSE/lDPFEa46TK4PyhKPQktN2W31paYcG7bAin4VUVR0T5EXHiDR5eXRxkwTmnK/aol9NsDeCeFf0pX+m3WpSScEkikggW5EAHD22fW8r7ozIza1w+Ymytrxx6Jfbmotmb64YNh+QnBVdRfz190d6xqea85IZdY0kl0tFrUJzwWobOT3hodqLWnirJ0r0nAoQBHoBP50NCdsfO0+2y3t3wjRsYq4QVN119utZCCH5RdJ3KwoqySufdNCsk0c9vyqjb54DSLJuR/PfRei/9DJHXm2UkxqAFLGJlLHe6Zqy7wUjA1jTL+pQJZvzuJi0Lmr9L+YRGVXbNcDofzcyXZGyjj7FgCthc9BEXxIFvNXapNJ0ZDWw0Se7EjDw2UIct+FrBZsnJYB92Y3jYiyrF7HR+S9SoGHe5DiBVerEh3MFtXOdIrNBxngo8khjgRg2btDeyw3R+/7NMy4qU8wWWr3QWQ4+nkxs9Ze1AeePhw4IsDwD97M71zTELffOsF7q7oUfz6RWLWXFR8rwYvESzOso/5osj4Auhd2nigTWi3FwGJAnT+J0AucWuhPufh7wL7n++Fh/7PZW0W+y6RAJYwt/bRgca943buHe/5NiwTcKc1ndqvmoO7d84tFdmLOYxrtSQl49ZmkhtB4lkmuV0tcLmt6xfX5Aql5m9xlvTXtxIXlXl/Hd/vxZ5vVe4ji5BfmmeMnh3dq5EXxkJGg0ZERpVPr+rKVeOggdcNr9rCgCfrdHP5LqdUG64b01AbhLGHTKF6B9Zq8neR1wfvaPX1pesUW5lFxKLjsjcH13XVZreldlYz/jcHkGZyjm0+hqQIor7AlHq9OhNVVyQ5UYnNONUMnMdK6d6tt2Wlbsi1rJcNhmmDyEH6qGLJpVy7EbNSWucd3cMFcCHyl78h6ybKr3EwYGjv11Ttt5MWB5IPe2AqB79TQr/ZVLPBb04+gBu/BaGgN1E2q909WZ7r9UZ/L3aavi0AadafWZ41VToVkGqpUJNm3v111+kXjkR02X3Ha96++62VAzY7EkQ0J39yij8RX+3q6LW0jlgE7d/RJUPoCM/0jbTlVlHSEzaLgUkuqGh2OqgqC6J/bqA7apDNGZS+0u55HV876r25Hp8MNpkMdRN14utkERiqRiEm8RkHdF7UKsSt9NsDPGhJ92743DE+3IJHzumJbfLISEohxWTTIrb+WUiGlPLl7Zr7FBLVVtX8fObxzc/v69LKg64YWlID1qeoSAe7lAUtbW9siE0wFy0cVxqHaSZqMJXLljjZK2R5y4VX4pLrukBECXItPThUOzPs/kVooV12s2u1x/A1aFefla0akE3MS6yndSRomeqhWIB/LZryUExbCHdErJ3nfQNAM12rVuqBAToNF2n5wbHf8/unj0VR36kCA7gUI7cabCj/nGaf8wRH5kC5niPNNcc7ZF2iGM9hAMgnsEOtfCGmx1p3WwOuPMs3FS1+sKt0GxvCPOUZSMepxzMjoKboSF8QQ8GUe1C8xc3QdFOgwPPQKBPsQg4y9xQXkB1bg1OCnU+BUAAYRjwIiSbTTUXeIPXXFYiO6792s9BmcZ+yVJdDxX1k8Uty/aQEvirNmVgMqb405d9gjiE59QEklgOv0MO2PV5OIfRX7GkfPRMOGtKB4uk6z0NHcoLwovymdEh0OHTzanG5D6pa3SdptZGHczlEx5WPzPXHXggrHiX8nGUluF0z34eGhv45u4qXThW7MjFlV0wuCiAwb31yGIApyuE5Zz83zU7v0fSf5+E/yx9XXsz/OiY8t9KIdWm1vz9Ts0cU/wPR5yPkKyg2pnIpXzKAgFAjUxke7DamEhzpCbmMcIOtItJ7uBX7OiMGmap4Nzejx1UQo1UOeJr7T5wEEb7ScDSniQtEEfKwE8rQoOOu6Aev3F7d9z+XfMPVHALS0oKLRUi1MlFnicRW5IlCeRFh8u0Gr6Th9yn9R8lN0jMWvu1dBJmgUePr0/XkJfiYofyTX5ZtYQjQj53DQYe9juAG70pCMgL5WDJGUBFPKT3NOO5hu8OfL+dSvVkysv79Jqnbk0AhCxDtQCQoc01ACBrkHz8MN6a8x8bxrUC89HaMCiv/xDfel3AWiucaOrjXXX6pXy0fL7m8tGDjfJE9YeRPX2elYQHCKv+wnVxjfI8+tL1RuE0FvyvjL24VSKqoZnpuSog6gQYF6CRoUwW0KDPXjMP10R4whRB7jaOQp50I2VKp47SuvcFihutKbikIr5j2fhmUoVYWB0XTqRERhIkGPfcW/H8Mo1nOA0nhG1/WA4pJ1yUOmUSV8kJQkHm/lm7xdno145p8qr1IC3SBOYcIbMXpEcfWB7zs7YYEmuYoswfFyWHEkjirI6/wbl3Xi7PoTC2qqcdSvkhi4tyCN9n0U26phbsj4o8X5Et5fPZ7aeJJeRcnQ6gkdGb6M5d7begIA/YzDDfkaHtfpimYNhxtH2QmhXpalt53SqZVRowuI9o/eeOYtXAJjTZ3tA8EwcDe6XWzS7rlBTdtCtqy4O+AnWpNErmuH4CooRO+GvWR0BguzK53kI9Ek5XEVtvPPwOcSvuiwUXe05kwfUo126RG/Wm35/t1tGeeJ9aP4aXIuFfT5FwCBFe/Jm/Lhvjiz/z2Ys18Du2Bh5tVMIKfGBSP5PB/RNZY85L8kdCJvEuoBLYRWH7hHpYYHTHgpjQmot09bt0f+J0TARHbDy1F/fVe1l4TabBuZ4blcOa1AN+HKpAqFhagWRQ+yyRVSLpWW1D9T0Lgy7S9xXAVjiJmerEvVWQmPkYVMpYRFTcXPwFPClhszByLrA5GGnskb7OYv71uo9UOQo19/rlNbKJrZAvhbpug3TK1QwMPWDU94ZZCjcWBreWBncKI8EF2v17wgXzhjgWtEGgmlkVtsHafhxfX/AyL8Y3k/zyUUuM5XhdKj/wJQlQeqtk9rQSeoivebK8D9pcagT8RymoFX6lVB75NpK3Idy5XFemlV84TO4I9y6ni8U1t9EXXw9yVrA+v/EG2Ofe67Q6bACvE3ehCud8r/HEkKGb+rGdJlw+gpYnBTvfaWg7b6T0eb4r+AqiYx4UGTauf0oCNUevzWCitjdYT0BWHlBUW1l4CEFhFwo0sDfaLrZi4yKZ4uJBTErFzoFyAR73Gr4CasLSypT6rOb88nrAk5b4XRMn6TZDv77jhtcVS63qeK2X7HkWS4LmDOtltLBfiDBh4b4waQLCfDFVaU9ZWyPKlYQ2CoKWqrsvN+MrwMlENBUyuIlwJ8gHD0ysSRcr7rPNKGOqA+j3sXBZUEhcMN/HsqWNOsln48VoPv0uVuxk+vwmVropl4L//Z6wuZt+6qtYrF9FmN4745yT/fnsTP/FKu5A3/hqperz+yBoJfsOlgmzqNfpRZ2f1OgmmEeUZqOV4GMOWVDU+eWpdCa9uhhQa7KvdDmRJr999lpAu+HoBLA/lkWHQb9N76hFExLSZakVYOtR/evFG+Xb9UbxCIOS4s/caugzWLAtsQpf3GMfcStxcsH3qRE8lMBe5996BnYQWUltw9OE/SETYl8fSvVp9LZSte6TRwxBcB0cM9T57wMqAe0GsSGeXmEXoQWy4WfpzMCK7a62BdRRRxwtJMlZgCUXZRLanf+9+Gy32XhUNiur0iBaOKwzkZQWwKb458ck2r7jabxA6wmq35pLqGAFbNGpDui7j673mFOtwWptF2pKdqeVdTb/GVRdtNE0pbqz+la9WzpqYkU9jDswYN5Q2oy7l1RRJgmNlEoXbbJSv+9UXVVA1k0WlSFSSbittBTfMeVCljGCg65MfdHIVQnvjr9LqKMvJoDZXXjI7u97lNmak5CO0zgTKFBZ+Nrp9V/txsVije4LilpHAxZyw0w8E5MZIcUksLzPtQRc+KY0yR5/3VUlga/dBxpFvybpQzKtk3EZaij4XsD/Li3SMXl7timK7O2PP/6Wp8l5/dvrlK9/DDlZFef/8fcf69/+7VWn9/8D+hVEhVSCAQA=
+spec:
+  refName: cilium.isovalent.com
+  version: 1.19.0
+  releaseNotes: The initial release of the Cilium package by wrapping Helm Chart. Cilium Helm chart version is 1.19.0, Cilium version is 1.19.0.
+  valuesSchema:
+    openAPIv3:
+      title: cilium.isovalent.com
+      properties:
+        properties:
+          MTU:
+            type: integer
+          affinity:
+            properties:
+              podAntiAffinity:
+                properties:
+                  requiredDuringSchedulingIgnoredDuringExecution:
+                    items:
+                      anyOf:
+                        - properties:
+                            labelSelector:
+                              properties:
+                                matchLabels:
+                                  properties:
+                                    k8s-app:
+                                      type: string
+                                  type: object
+                              type: object
+                            topologyKey:
+                              type: string
+                    type: array
+                type: object
+            type: object
+          agent:
+            type: boolean
+          agentNotReadyTaintKey:
+            type: string
+          aksbyocni:
+            properties:
+              enabled:
+                type: boolean
+            type: object
+          alibabacloud:
+            properties:
+              enabled:
+                type: boolean
+              nodeSpec:
+                properties:
+                  securityGroupTags:
+                    items: {}
+                    type: array
+                  securityGroups:
+                    items: {}
+                    type: array
+                  vSwitchTags:
+                    items: {}
+                    type: array
+                  vSwitches:
+                    items: {}
+                    type: array
+                type: object
+            type: object
+          annotateK8sNode:
+            type: boolean
+          annotations:
+            type: object
+          apiRateLimit:
+            type:
+              - 'null'
+              - string
+          authentication:
+            properties:
+              enabled:
+                type: boolean
+              gcInterval:
+                type: string
+              mutual:
+                properties:
+                  connectTimeout:
+                    type: string
+                  port:
+                    type: integer
+                  spire:
+                    properties:
+                      adminSocketPath:
+                        type: string
+                      agentSocketPath:
+                        type: string
+                      annotations:
+                        type: object
+                      connectionTimeout:
+                        type: string
+                      enabled:
+                        type: boolean
+                      install:
+                        properties:
+                          agent:
+                            properties:
+                              affinity:
+                                type: object
+                              annotations:
+                                type: object
+                              image:
+                                properties:
+                                  digest:
+                                    type: string
+                                  override:
+                                    type:
+                                      - 'null'
+                                      - string
+                                  pullPolicy:
+                                    type: string
+                                  repository:
+                                    type: string
+                                  tag:
+                                    type: string
+                                  useDigest:
+                                    type: boolean
+                                type: object
+                              labels:
+                                type: object
+                              nodeSelector:
+                                type: object
+                              podSecurityContext:
+                                type: object
+                              priorityClassName:
+                                type: string
+                              resources:
+                                type: object
+                              securityContext:
+                                type: object
+                              serviceAccount:
+                                properties:
+                                  create:
+                                    type: boolean
+                                  name:
+                                    type: string
+                                type: object
+                              skipKubeletVerification:
+                                type: boolean
+                              tolerations:
+                                items:
+                                  anyOf:
+                                    - properties:
+                                        effect:
+                                          type: string
+                                        key:
+                                          type: string
+                                    - properties:
+                                        effect:
+                                          type: string
+                                        key:
+                                          type: string
+                                    - properties:
+                                        effect:
+                                          type: string
+                                        key:
+                                          type: string
+                                    - properties:
+                                        effect:
+                                          type: string
+                                        key:
+                                          type: string
+                                        value:
+                                          type: string
+                                    - properties:
+                                        key:
+                                          type: string
+                                        operator:
+                                          type: string
+                                type: array
+                            type: object
+                          enabled:
+                            type: boolean
+                          existingNamespace:
+                            type: boolean
+                          initImage:
+                            properties:
+                              digest:
+                                type: string
+                              override:
+                                type:
+                                  - 'null'
+                                  - string
+                              pullPolicy:
+                                type: string
+                              repository:
+                                type: string
+                              tag:
+                                type: string
+                              useDigest:
+                                type: boolean
+                            type: object
+                          namespace:
+                            type: string
+                          server:
+                            properties:
+                              affinity:
+                                type: object
+                              annotations:
+                                type: object
+                              ca:
+                                properties:
+                                  keyType:
+                                    type: string
+                                  subject:
+                                    properties:
+                                      commonName:
+                                        type: string
+                                      country:
+                                        type: string
+                                      organization:
+                                        type: string
+                                    type: object
+                                type: object
+                              dataStorage:
+                                properties:
+                                  accessMode:
+                                    type: string
+                                  enabled:
+                                    type: boolean
+                                  size:
+                                    type: string
+                                  storageClass:
+                                    type:
+                                      - 'null'
+                                      - string
+                                type: object
+                              image:
+                                properties:
+                                  digest:
+                                    type: string
+                                  override:
+                                    type:
+                                      - 'null'
+                                      - string
+                                  pullPolicy:
+                                    type: string
+                                  repository:
+                                    type: string
+                                  tag:
+                                    type: string
+                                  useDigest:
+                                    type: boolean
+                                type: object
+                              initContainers:
+                                items: {}
+                                type: array
+                              labels:
+                                type: object
+                              nodeSelector:
+                                type: object
+                              podSecurityContext:
+                                type: object
+                              priorityClassName:
+                                type: string
+                              resources:
+                                type: object
+                              securityContext:
+                                type: object
+                              service:
+                                properties:
+                                  annotations:
+                                    type: object
+                                  labels:
+                                    type: object
+                                  type:
+                                    type: string
+                                type: object
+                              serviceAccount:
+                                properties:
+                                  create:
+                                    type: boolean
+                                  name:
+                                    type: string
+                                type: object
+                              tolerations:
+                                items: {}
+                                type: array
+                            type: object
+                        type: object
+                      serverAddress:
+                        type:
+                          - 'null'
+                          - string
+                      trustDomain:
+                        type: string
+                    type: object
+                type: object
+              queueSize:
+                type: integer
+              rotatedIdentitiesQueueSize:
+                type: integer
+            type: object
+          autoDirectNodeRoutes:
+            type:
+              - boolean
+              - string
+          azure:
+            properties:
+              enabled:
+                type: boolean
+              nodeSpec:
+                properties:
+                  azureInterfaceName:
+                    type: string
+                type: object
+            type: object
+          bandwidthManager:
+            properties:
+              bbr:
+                type: boolean
+              bbrHostNamespaceOnly:
+                type: boolean
+              enabled:
+                type: boolean
+            type: object
+          bgpControlPlane:
+            properties:
+              enabled:
+                type: boolean
+              legacyOriginAttribute:
+                properties:
+                  enabled:
+                    type: boolean
+                type: object
+              routerIDAllocation:
+                properties:
+                  ipPool:
+                    type: string
+                  mode:
+                    type: string
+                type: object
+              secretsNamespace:
+                properties:
+                  create:
+                    type: boolean
+                  name:
+                    type: string
+                type: object
+              statusReport:
+                properties:
+                  enabled:
+                    type: boolean
+                type: object
+            type: object
+          bpf:
+            properties:
+              authMapMax:
+                type:
+                  - 'null'
+                  - integer
+              autoMount:
+                properties:
+                  enabled:
+                    type: boolean
+                type: object
+              ctAccounting:
+                type: boolean
+              ctAnyMax:
+                type:
+                  - 'null'
+                  - integer
+              ctTcpMax:
+                type:
+                  - 'null'
+                  - integer
+              datapathMode:
+                type: string
+              disableExternalIPMitigation:
+                type: boolean
+              distributedLRU:
+                properties:
+                  enabled:
+                    type: boolean
+                type: object
+              enableTCX:
+                type: boolean
+              events:
+                properties:
+                  default:
+                    properties:
+                      burstLimit:
+                        type:
+                          - 'null'
+                          - integer
+                      rateLimit:
+                        type:
+                          - 'null'
+                          - integer
+                    type: object
+                  drop:
+                    properties:
+                      enabled:
+                        type: boolean
+                    type: object
+                  policyVerdict:
+                    properties:
+                      enabled:
+                        type: boolean
+                    type: object
+                  trace:
+                    properties:
+                      enabled:
+                        type: boolean
+                    type: object
+                type: object
+              hostLegacyRouting:
+                type:
+                  - 'null'
+                  - boolean
+              lbAlgorithmAnnotation:
+                type: boolean
+              lbExternalClusterIP:
+                type: boolean
+              lbMapMax:
+                type:
+                  - 'null'
+                  - integer
+              lbModeAnnotation:
+                type: boolean
+              lbSourceRangeAllTypes:
+                type: boolean
+              mapDynamicSizeRatio:
+                type:
+                  - 'null'
+                  - number
+                  - string
+              masquerade:
+                type:
+                  - 'null'
+                  - boolean
+              monitorAggregation:
+                type: string
+              monitorFlags:
+                type: string
+              monitorInterval:
+                type: string
+              monitorTraceIPOption:
+                minimum: 0
+                maximum: 255
+                type:
+                  - 'null'
+                  - integer
+              natMax:
+                type:
+                  - 'null'
+                  - integer
+              neighMax:
+                type:
+                  - 'null'
+                  - integer
+              nodeMapMax:
+                type:
+                  - 'null'
+                  - integer
+              policyMapMax:
+                type:
+                  - 'null'
+                  - integer
+              policyMapPressureMetricsThreshold:
+                type:
+                  - 'null'
+                  - number
+              policyStatsMapMax:
+                type:
+                  - 'null'
+                  - integer
+              preallocateMaps:
+                type: boolean
+              root:
+                type: string
+              tproxy:
+                type:
+                  - 'null'
+                  - boolean
+              vlanBypass:
+                type:
+                  - 'null'
+                  - array
+            type: object
+          bpfClockProbe:
+            type: boolean
+          certgen:
+            properties:
+              affinity:
+                type: object
+              annotations:
+                properties:
+                  cronJob:
+                    type: object
+                  job:
+                    type: object
+                type: object
+              cronJob:
+                properties:
+                  failedJobsHistoryLimit:
+                    type: integer
+                  successfulJobsHistoryLimit:
+                    type: integer
+                type: object
+              extraVolumeMounts:
+                items: {}
+                type: array
+              extraVolumes:
+                items: {}
+                type: array
+              generateCA:
+                type: boolean
+              image:
+                properties:
+                  digest:
+                    type: string
+                  override:
+                    type:
+                      - 'null'
+                      - string
+                  pullPolicy:
+                    type: string
+                  repository:
+                    type: string
+                  tag:
+                    type: string
+                  useDigest:
+                    type: boolean
+                type: object
+              nodeSelector:
+                type: object
+              podLabels:
+                type: object
+              priorityClassName:
+                type: string
+              resources:
+                type: object
+              tolerations:
+                items: {}
+                type: array
+              ttlSecondsAfterFinished:
+                type:
+                  - 'null'
+                  - integer
+            type: object
+          cgroup:
+            properties:
+              autoMount:
+                properties:
+                  enabled:
+                    type: boolean
+                  resources:
+                    type: object
+                type: object
+              hostRoot:
+                type: string
+            type: object
+          ciliumEndpointSlice:
+            properties:
+              enabled:
+                type: boolean
+              rateLimits:
+                items:
+                  anyOf:
+                    - properties:
+                        burst:
+                          type: integer
+                        limit:
+                          type: integer
+                        nodes:
+                          type: integer
+                    - properties:
+                        burst:
+                          type: integer
+                        limit:
+                          type: integer
+                        nodes:
+                          type: integer
+                type: array
+            type: object
+          cleanBpfState:
+            type: boolean
+          cleanState:
+            type: boolean
+          cluster:
+            properties:
+              id:
+                type: integer
+              name:
+                type: string
+            type: object
+          clustermesh:
+            properties:
+              annotations:
+                type: object
+              apiserver:
+                properties:
+                  affinity:
+                    properties:
+                      podAntiAffinity:
+                        properties:
+                          preferredDuringSchedulingIgnoredDuringExecution:
+                            items:
+                              anyOf:
+                                - properties:
+                                    podAffinityTerm:
+                                      properties:
+                                        labelSelector:
+                                          properties:
+                                            matchLabels:
+                                              properties:
+                                                k8s-app:
+                                                  type: string
+                                              type: object
+                                          type: object
+                                        topologyKey:
+                                          type: string
+                                      type: object
+                                    weight:
+                                      type: integer
+                            type: array
+                        type: object
+                    type: object
+                  etcd:
+                    properties:
+                      init:
+                        properties:
+                          extraArgs:
+                            items: {}
+                            type: array
+                          extraEnv:
+                            items: {}
+                            type: array
+                          resources:
+                            type: object
+                        type: object
+                      lifecycle:
+                        type: object
+                      resources:
+                        type: object
+                      securityContext:
+                        properties:
+                          allowPrivilegeEscalation:
+                            type: boolean
+                          capabilities:
+                            properties:
+                              drop:
+                                items:
+                                  anyOf:
+                                    - type: string
+                                type: array
+                            type: object
+                        type: object
+                      storageMedium:
+                        enum:
+                          - Disk
+                          - Memory
+                    type: object
+                  extraArgs:
+                    items: {}
+                    type: array
+                  extraEnv:
+                    items: {}
+                    type: array
+                  extraVolumeMounts:
+                    items: {}
+                    type: array
+                  extraVolumes:
+                    items: {}
+                    type: array
+                  healthPort:
+                    type: integer
+                  image:
+                    properties:
+                      digest:
+                        type: string
+                      override:
+                        type:
+                          - 'null'
+                          - string
+                      pullPolicy:
+                        type: string
+                      repository:
+                        type: string
+                      tag:
+                        type: string
+                      useDigest:
+                        type: boolean
+                    type: object
+                  kvstoremesh:
+                    properties:
+                      enabled:
+                        type: boolean
+                      extraArgs:
+                        items: {}
+                        type: array
+                      extraEnv:
+                        items: {}
+                        type: array
+                      extraVolumeMounts:
+                        items: {}
+                        type: array
+                      healthPort:
+                        type: integer
+                      kvstoreMode:
+                        type: string
+                      lifecycle:
+                        type: object
+                      readinessProbe:
+                        type: object
+                      resources:
+                        type: object
+                      securityContext:
+                        properties:
+                          allowPrivilegeEscalation:
+                            type: boolean
+                          capabilities:
+                            properties:
+                              drop:
+                                items:
+                                  anyOf:
+                                    - type: string
+                                type: array
+                            type: object
+                        type: object
+                    type: object
+                  lifecycle:
+                    type: object
+                  metrics:
+                    properties:
+                      enabled:
+                        type: boolean
+                      etcd:
+                        properties:
+                          enabled:
+                            type: boolean
+                          mode:
+                            type: string
+                          port:
+                            type: integer
+                        type: object
+                      kvstoremesh:
+                        properties:
+                          enabled:
+                            type: boolean
+                          port:
+                            type: integer
+                        type: object
+                      port:
+                        type: integer
+                      serviceMonitor:
+                        properties:
+                          annotations:
+                            type: object
+                          enabled:
+                            type: boolean
+                          etcd:
+                            properties:
+                              interval:
+                                type: string
+                              metricRelabelings:
+                                type:
+                                  - 'null'
+                                  - array
+                              relabelings:
+                                type:
+                                  - 'null'
+                                  - array
+                              scrapeTimeout:
+                                type:
+                                  - 'null'
+                                  - string
+                            type: object
+                          interval:
+                            type: string
+                          kvstoremesh:
+                            properties:
+                              interval:
+                                type: string
+                              metricRelabelings:
+                                type:
+                                  - 'null'
+                                  - array
+                              relabelings:
+                                type:
+                                  - 'null'
+                                  - array
+                              scrapeTimeout:
+                                type:
+                                  - 'null'
+                                  - string
+                            type: object
+                          labels:
+                            type: object
+                          metricRelabelings:
+                            type:
+                              - 'null'
+                              - array
+                          relabelings:
+                            type:
+                              - 'null'
+                              - array
+                          scrapeTimeout:
+                            type:
+                              - 'null'
+                              - string
+                        type: object
+                    type: object
+                  nodeSelector:
+                    properties:
+                      kubernetes.io/os:
+                        type: string
+                    type: object
+                  podAnnotations:
+                    type: object
+                  podDisruptionBudget:
+                    properties:
+                      enabled:
+                        type: boolean
+                      maxUnavailable:
+                        type:
+                          - 'null'
+                          - integer
+                          - string
+                      minAvailable:
+                        type:
+                          - 'null'
+                          - integer
+                          - string
+                      unhealthyPodEvictionPolicy:
+                        type:
+                          - 'null'
+                          - string
+                    type: object
+                  podLabels:
+                    type: object
+                  podSecurityContext:
+                    properties:
+                      fsGroup:
+                        type: integer
+                      runAsGroup:
+                        type: integer
+                      runAsNonRoot:
+                        type: boolean
+                      runAsUser:
+                        type: integer
+                    type: object
+                  priorityClassName:
+                    type: string
+                  readinessProbe:
+                    type: object
+                  replicas:
+                    type: integer
+                  resources:
+                    type: object
+                  securityContext:
+                    properties:
+                      allowPrivilegeEscalation:
+                        type: boolean
+                      capabilities:
+                        properties:
+                          drop:
+                            items:
+                              anyOf:
+                                - type: string
+                            type: array
+                        type: object
+                    type: object
+                  service:
+                    properties:
+                      annotations:
+                        type: object
+                      enableSessionAffinity:
+                        enum:
+                          - HAOnly
+                          - Always
+                          - Never
+                      externalTrafficPolicy:
+                        enum:
+                          - Local
+                          - Cluster
+                      externallyCreated:
+                        type: boolean
+                      internalTrafficPolicy:
+                        enum:
+                          - Local
+                          - Cluster
+                      labels:
+                        type: object
+                      loadBalancerClass:
+                        type:
+                          - 'null'
+                          - string
+                      loadBalancerIP:
+                        type:
+                          - 'null'
+                          - string
+                      loadBalancerSourceRanges:
+                        items: {}
+                        type: array
+                      nodePort:
+                        type: integer
+                      type:
+                        type: string
+                    type: object
+                  terminationGracePeriodSeconds:
+                    type: integer
+                  tls:
+                    properties:
+                      admin:
+                        properties:
+                          cert:
+                            type: string
+                          key:
+                            type: string
+                        type: object
+                      authMode:
+                        type: string
+                      auto:
+                        properties:
+                          certManagerIssuerRef:
+                            type: object
+                          certValidityDuration:
+                            type: integer
+                          enabled:
+                            type: boolean
+                          method:
+                            type: string
+                        type: object
+                      enableSecrets:
+                        type: boolean
+                      remote:
+                        properties:
+                          cert:
+                            type: string
+                          key:
+                            type: string
+                        type: object
+                      server:
+                        properties:
+                          cert:
+                            type: string
+                          extraDnsNames:
+                            items: {}
+                            type: array
+                          extraIpAddresses:
+                            items: {}
+                            type: array
+                          key:
+                            type: string
+                        type: object
+                    type: object
+                  tolerations:
+                    items: {}
+                    type: array
+                  topologySpreadConstraints:
+                    items: {}
+                    type: array
+                  updateStrategy:
+                    properties:
+                      rollingUpdate:
+                        properties:
+                          maxSurge:
+                            type:
+                              - integer
+                              - string
+                          maxUnavailable:
+                            type:
+                              - integer
+                              - string
+                        type: object
+                      type:
+                        type: string
+                    type: object
+                type: object
+              cacheTTL:
+                type: string
+              config:
+                properties:
+                  clusters:
+                    items: {}
+                    type:
+                      - object
+                      - array
+                  domain:
+                    type: string
+                  enabled:
+                    type: boolean
+                type: object
+              enableEndpointSliceSynchronization:
+                type: boolean
+              enableMCSAPISupport:
+                type: boolean
+              maxConnectedClusters:
+                type: integer
+              mcsapi:
+                properties:
+                  corednsAutoConfigure:
+                    properties:
+                      affinity:
+                        type: object
+                      annotations:
+                        type: object
+                      coredns:
+                        properties:
+                          clusterDomain:
+                            type: string
+                          clustersetDomain:
+                            type: string
+                          configMapName:
+                            type: string
+                          deploymentName:
+                            type: string
+                          namespace:
+                            type: string
+                          serviceAccountName:
+                            type: string
+                        type: object
+                      enabled:
+                        type: boolean
+                      extraArgs:
+                        items: {}
+                        type: array
+                      extraVolumeMounts:
+                        items: {}
+                        type: array
+                      extraVolumes:
+                        items: {}
+                        type: array
+                      nodeSelector:
+                        type: object
+                      podLabels:
+                        type: object
+                      priorityClassName:
+                        type: string
+                      resources:
+                        type: object
+                      tolerations:
+                        items: {}
+                        type: array
+                      ttlSecondsAfterFinished:
+                        type: integer
+                    type: object
+                  enabled:
+                    type: boolean
+                  installCRDs:
+                    type: boolean
+                type: object
+              policyDefaultLocalCluster:
+                type: boolean
+              useAPIServer:
+                type: boolean
+            type: object
+          cni:
+            properties:
+              binPath:
+                type: string
+              chainingMode:
+                type:
+                  - 'null'
+                  - string
+              chainingTarget:
+                type:
+                  - 'null'
+                  - string
+              confFileMountPath:
+                type: string
+              confPath:
+                type: string
+              configMap:
+                type: string
+              configMapKey:
+                type: string
+              customConf:
+                type: boolean
+              enableRouteMTUForCNIChaining:
+                type: boolean
+              exclusive:
+                type: boolean
+              hostConfDirMountPath:
+                type: string
+              install:
+                type: boolean
+              iptablesRemoveAWSRules:
+                type: boolean
+              logFile:
+                type: string
+              resources:
+                properties:
+                  limits:
+                    properties:
+                      cpu:
+                        type:
+                          - integer
+                          - string
+                      memory:
+                        type: string
+                    type: object
+                  requests:
+                    properties:
+                      cpu:
+                        type:
+                          - integer
+                          - string
+                      memory:
+                        type: string
+                    type: object
+                type: object
+              uninstall:
+                type: boolean
+            type: object
+          commonLabels:
+            type:
+              - 'null'
+              - object
+          connectivityProbeFrequencyRatio:
+            type:
+              - 'null'
+              - number
+          conntrackGCInterval:
+            type: string
+          conntrackGCMaxInterval:
+            type: string
+          crdWaitTimeout:
+            type: string
+          daemon:
+            properties:
+              allowedConfigOverrides:
+                type:
+                  - 'null'
+                  - string
+              blockedConfigOverrides:
+                type:
+                  - 'null'
+                  - string
+              configSources:
+                type:
+                  - 'null'
+                  - string
+              enableSourceIPVerification:
+                type:
+                  - 'null'
+                  - boolean
+              runPath:
+                type: string
+            type: object
+          dashboards:
+            properties:
+              annotations:
+                type: object
+              enabled:
+                type: boolean
+              label:
+                type: string
+              labelValue:
+                type: string
+              namespace:
+                type:
+                  - 'null'
+                  - string
+            type: object
+          debug:
+            properties:
+              enabled:
+                type: boolean
+              metricsSamplingInterval:
+                type:
+                  - 'null'
+                  - string
+              verbose:
+                type:
+                  - 'null'
+                  - string
+            type: object
+          defaultLBServiceIPAM:
+            type: string
+          directRoutingSkipUnreachable:
+            type: boolean
+          disableEndpointCRD:
+            type: boolean
+          dnsPolicy:
+            type: string
+          dnsProxy:
+            properties:
+              dnsRejectResponseCode:
+                type: string
+              enableDnsCompression:
+                type: boolean
+              endpointMaxIpPerHostname:
+                type: integer
+              idleConnectionGracePeriod:
+                type: string
+              maxDeferredConnectionDeletes:
+                type: integer
+              minTtl:
+                type: integer
+              preAllocateIdentities:
+                type: boolean
+              preCache:
+                type: string
+              proxyPort:
+                type: integer
+              proxyResponseMaxDelay:
+                type: string
+              socketLingerTimeout:
+                type: integer
+            type: object
+          egressGateway:
+            properties:
+              enabled:
+                type: boolean
+              reconciliationTriggerInterval:
+                type: string
+            type: object
+          enableCriticalPriorityClass:
+            type: boolean
+          enableIPv4BIGTCP:
+            type: boolean
+          enableIPv4Masquerade:
+            type:
+              - 'null'
+              - boolean
+          enableIPv6BIGTCP:
+            type: boolean
+          enableIPv6Masquerade:
+            type: boolean
+          enableInternalTrafficPolicy:
+            type: boolean
+          enableLBIPAM:
+            type: boolean
+          enableMasqueradeRouteSource:
+            type: boolean
+          enableNoServiceEndpointsRoutable:
+            type: boolean
+          enableNonDefaultDenyPolicies:
+            type: boolean
+          enableTunnelBIGTCP:
+            type: boolean
+          enableXTSocketFallback:
+            type: boolean
+          encryption:
+            properties:
+              enabled:
+                type: boolean
+              ipsec:
+                properties:
+                  encryptedOverlay:
+                    type: boolean
+                  interface:
+                    type: string
+                  keyFile:
+                    type: string
+                  keyRotationDuration:
+                    type: string
+                  keyWatcher:
+                    type: boolean
+                  mountPath:
+                    type: string
+                  secretName:
+                    type: string
+                type: object
+              nodeEncryption:
+                type: boolean
+              strictMode:
+                properties:
+                  allowRemoteNodeIdentities:
+                    type: boolean
+                  cidr:
+                    type: string
+                  egress:
+                    properties:
+                      allowRemoteNodeIdentities:
+                        type: boolean
+                      cidr:
+                        type: string
+                      enabled:
+                        type: boolean
+                    type: object
+                  enabled:
+                    type: boolean
+                  ingress:
+                    properties:
+                      enabled:
+                        type: boolean
+                    type: object
+                type: object
+              type:
+                type: string
+              wireguard:
+                properties:
+                  persistentKeepalive:
+                    type: string
+                type: object
+            type: object
+          endpointHealthChecking:
+            properties:
+              enabled:
+                type: boolean
+            type: object
+          endpointLockdownOnMapOverflow:
+            type: boolean
+          endpointRoutes:
+            properties:
+              enabled:
+                type:
+                  - boolean
+                  - string
+            type: object
+          eni:
+            properties:
+              awsEnablePrefixDelegation:
+                type: boolean
+              awsReleaseExcessIPs:
+                type: boolean
+              ec2APIEndpoint:
+                type: string
+              enabled:
+                type: boolean
+              eniTags:
+                type: object
+              gcInterval:
+                type: string
+              gcTags:
+                type: object
+              iamRole:
+                type: string
+              instanceTagsFilter:
+                items: {}
+                type: array
+              nodeSpec:
+                properties:
+                  deleteOnTermination:
+                    type:
+                      - 'null'
+                      - boolean
+                  disablePrefixDelegation:
+                    type: boolean
+                  excludeInterfaceTags:
+                    items: {}
+                    type: array
+                  firstInterfaceIndex:
+                    type:
+                      - 'null'
+                      - integer
+                  securityGroupTags:
+                    items: {}
+                    type: array
+                  securityGroups:
+                    items: {}
+                    type: array
+                  subnetIDs:
+                    items: {}
+                    type: array
+                  subnetTags:
+                    items: {}
+                    type: array
+                  usePrimaryAddress:
+                    type: boolean
+                type: object
+              subnetIDsFilter:
+                items: {}
+                type: array
+              subnetTagsFilter:
+                items: {}
+                type: array
+            type: object
+          envoy:
+            properties:
+              affinity:
+                properties:
+                  nodeAffinity:
+                    properties:
+                      requiredDuringSchedulingIgnoredDuringExecution:
+                        properties:
+                          nodeSelectorTerms:
+                            items:
+                              anyOf:
+                                - properties:
+                                    matchExpressions:
+                                      items:
+                                        anyOf:
+                                          - properties:
+                                              key:
+                                                type: string
+                                              operator:
+                                                type: string
+                                              values:
+                                                items:
+                                                  anyOf:
+                                                    - type: string
+                                                type: array
+                                      type: array
+                            type: array
+                        type: object
+                    type: object
+                  podAffinity:
+                    properties:
+                      requiredDuringSchedulingIgnoredDuringExecution:
+                        items:
+                          anyOf:
+                            - properties:
+                                labelSelector:
+                                  properties:
+                                    matchLabels:
+                                      properties:
+                                        k8s-app:
+                                          type: string
+                                      type: object
+                                  type: object
+                                topologyKey:
+                                  type: string
+                        type: array
+                    type: object
+                  podAntiAffinity:
+                    properties:
+                      requiredDuringSchedulingIgnoredDuringExecution:
+                        items:
+                          anyOf:
+                            - properties:
+                                labelSelector:
+                                  properties:
+                                    matchLabels:
+                                      properties:
+                                        k8s-app:
+                                          type: string
+                                      type: object
+                                  type: object
+                                topologyKey:
+                                  type: string
+                        type: array
+                    type: object
+                type: object
+              annotations:
+                type: object
+              baseID:
+                type: integer
+              bootstrapConfigMap:
+                type:
+                  - 'null'
+                  - string
+              clusterMaxConnections:
+                type: integer
+              clusterMaxRequests:
+                type: integer
+              connectTimeoutSeconds:
+                type: integer
+              debug:
+                properties:
+                  admin:
+                    properties:
+                      enabled:
+                        type: boolean
+                      port:
+                        type: integer
+                    type: object
+                type: object
+              dnsPolicy:
+                type:
+                  - 'null'
+                  - string
+              enabled:
+                type:
+                  - 'null'
+                  - boolean
+              extraArgs:
+                items: {}
+                type: array
+              extraContainers:
+                items: {}
+                type: array
+              extraEnv:
+                items: {}
+                type: array
+              extraHostPathMounts:
+                items: {}
+                type: array
+              extraVolumeMounts:
+                items: {}
+                type: array
+              extraVolumes:
+                items: {}
+                type: array
+              healthPort:
+                type: integer
+              httpRetryCount:
+                type: integer
+              httpUpstreamLingerTimeout:
+                type: 'null'
+              idleTimeoutDurationSeconds:
+                type: integer
+              image:
+                properties:
+                  digest:
+                    type: string
+                  override:
+                    type:
+                      - 'null'
+                      - string
+                  pullPolicy:
+                    type: string
+                  repository:
+                    type: string
+                  tag:
+                    type: string
+                  useDigest:
+                    type: boolean
+                type: object
+              initContainers:
+                items: {}
+                type: array
+              initialFetchTimeoutSeconds:
+                type: integer
+              livenessProbe:
+                properties:
+                  enabled:
+                    type: boolean
+                  failureThreshold:
+                    type: integer
+                  periodSeconds:
+                    type: integer
+                type: object
+              log:
+                properties:
+                  accessLogBufferSize:
+                    type:
+                      - 'null'
+                      - integer
+                  defaultLevel:
+                    oneOf:
+                      - type: 'null'
+                      - enum:
+                          - trace
+                          - debug
+                          - info
+                          - warning
+                          - error
+                          - critical
+                          - 'off'
+                  format:
+                    type:
+                      - 'null'
+                      - string
+                  format_json:
+                    type:
+                      - 'null'
+                      - object
+                  path:
+                    type: string
+                type: object
+              maxConcurrentRetries:
+                type: integer
+              maxConnectionDurationSeconds:
+                type: integer
+              maxGlobalDownstreamConnections:
+                type: integer
+              maxRequestsPerConnection:
+                type: integer
+              nodeSelector:
+                properties:
+                  kubernetes.io/os:
+                    type: string
+                type: object
+              podAnnotations:
+                type: object
+              podLabels:
+                type: object
+              podSecurityContext:
+                properties:
+                  appArmorProfile:
+                    properties:
+                      type:
+                        type: string
+                    type: object
+                type: object
+              policyRestoreTimeoutDuration:
+                type:
+                  - 'null'
+                  - string
+              priorityClassName:
+                type:
+                  - 'null'
+                  - string
+              prometheus:
+                properties:
+                  enabled:
+                    type: boolean
+                  port:
+                    type: string
+                  serviceMonitor:
+                    properties:
+                      annotations:
+                        type: object
+                      enabled:
+                        type: boolean
+                      interval:
+                        type: string
+                      labels:
+                        type: object
+                      metricRelabelings:
+                        type:
+                          - 'null'
+                          - array
+                      relabelings:
+                        items:
+                          anyOf:
+                            - properties:
+                                action:
+                                  type: string
+                                replacement:
+                                  type: string
+                                sourceLabels:
+                                  items:
+                                    anyOf:
+                                      - type: string
+                                  type: array
+                                targetLabel:
+                                  type: string
+                        type: array
+                      scrapeTimeout:
+                        type:
+                          - 'null'
+                          - string
+                    type: object
+                type: object
+              readinessProbe:
+                properties:
+                  failureThreshold:
+                    type: integer
+                  periodSeconds:
+                    type: integer
+                type: object
+              resources:
+                type: object
+              rollOutPods:
+                type: boolean
+              securityContext:
+                properties:
+                  capabilities:
+                    properties:
+                      envoy:
+                        items:
+                          anyOf:
+                            - type: string
+                            - type: string
+                        type: array
+                      keepCapNetBindService:
+                        type: boolean
+                    type: object
+                  privileged:
+                    type: boolean
+                  seLinuxOptions:
+                    properties:
+                      level:
+                        type: string
+                      type:
+                        type: string
+                    type: object
+                type: object
+              startupProbe:
+                properties:
+                  enabled:
+                    type: boolean
+                  failureThreshold:
+                    type: integer
+                  periodSeconds:
+                    type: integer
+                type: object
+              streamIdleTimeoutDurationSeconds:
+                type: integer
+              terminationGracePeriodSeconds:
+                type: integer
+              tolerations:
+                items:
+                  anyOf:
+                    - properties:
+                        operator:
+                          type: string
+                type: array
+              updateStrategy:
+                properties:
+                  rollingUpdate:
+                    properties:
+                      maxUnavailable:
+                        type:
+                          - integer
+                          - string
+                    type: object
+                  type:
+                    type: string
+                type: object
+              useOriginalSourceAddress:
+                type: boolean
+              xffNumTrustedHopsL7PolicyEgress:
+                type: integer
+              xffNumTrustedHopsL7PolicyIngress:
+                type: integer
+            type: object
+          envoyConfig:
+            properties:
+              enabled:
+                type: boolean
+              retryInterval:
+                type: string
+              secretsNamespace:
+                properties:
+                  create:
+                    type: boolean
+                  name:
+                    type: string
+                type: object
+            type: object
+          etcd:
+            properties:
+              enabled:
+                type: boolean
+              endpoints:
+                items:
+                  anyOf:
+                    - type: string
+                type: array
+              ssl:
+                type: boolean
+            type: object
+          extraArgs:
+            items: {}
+            type: array
+          extraConfig:
+            type: object
+          extraContainers:
+            items: {}
+            type: array
+          extraEnv:
+            items: {}
+            type: array
+          extraHostPathMounts:
+            items: {}
+            type: array
+          extraInitContainers:
+            items: {}
+            type: array
+          extraVolumeMounts:
+            items: {}
+            type: array
+          extraVolumes:
+            items: {}
+            type: array
+          forceDeviceDetection:
+            type: boolean
+          gatewayAPI:
+            properties:
+              enableAlpn:
+                type: boolean
+              enableAppProtocol:
+                type: boolean
+              enableProxyProtocol:
+                type: boolean
+              enabled:
+                type: boolean
+              externalTrafficPolicy:
+                type: string
+              gatewayClass:
+                properties:
+                  create:
+                    type: string
+                type: object
+              hostNetwork:
+                properties:
+                  enabled:
+                    type: boolean
+                  nodes:
+                    properties:
+                      matchLabels:
+                        type: object
+                    type: object
+                type: object
+              secretsNamespace:
+                properties:
+                  create:
+                    type: boolean
+                  name:
+                    type: string
+                  sync:
+                    type: boolean
+                type: object
+              xffNumTrustedHops:
+                type: integer
+            type: object
+          gke:
+            properties:
+              enabled:
+                type: boolean
+            type: object
+          global:
+            type: object
+          healthCheckICMPFailureThreshold:
+            type: integer
+          healthChecking:
+            type: boolean
+          healthPort:
+            type: integer
+          hostFirewall:
+            properties:
+              enabled:
+                type: boolean
+            type: object
+          hubble:
+            properties:
+              annotations:
+                type: object
+              dropEventEmitter:
+                properties:
+                  enabled:
+                    type: boolean
+                  interval:
+                    type: string
+                  reasons:
+                    items:
+                      anyOf:
+                        - type: string
+                        - type: string
+                    type: array
+                type: object
+              enabled:
+                type: boolean
+              export:
+                properties:
+                  dynamic:
+                    properties:
+                      config:
+                        properties:
+                          configMapName:
+                            type: string
+                          content:
+                            items:
+                              anyOf:
+                                - properties:
+                                    aggregationInterval:
+                                      type: string
+                                    excludeFilters:
+                                      items: {}
+                                      type: array
+                                    fieldAggregate:
+                                      items: {}
+                                      type: array
+                                    fieldMask:
+                                      items: {}
+                                      type: array
+                                    fileCompress:
+                                      type: boolean
+                                    fileMaxBackups:
+                                      type: integer
+                                    fileMaxSizeMb:
+                                      type: integer
+                                    filePath:
+                                      type: string
+                                    includeFilters:
+                                      items: {}
+                                      type: array
+                                    name:
+                                      type: string
+                            type: array
+                          createConfigMap:
+                            type: boolean
+                        type: object
+                      enabled:
+                        type: boolean
+                    type: object
+                  static:
+                    properties:
+                      aggregationInterval:
+                        type: string
+                      allowList:
+                        items: {}
+                        type: array
+                      denyList:
+                        items: {}
+                        type: array
+                      enabled:
+                        type: boolean
+                      fieldAggregate:
+                        items: {}
+                        type: array
+                      fieldMask:
+                        items: {}
+                        type: array
+                      fileCompress:
+                        type: boolean
+                      fileMaxBackups:
+                        type: integer
+                      fileMaxSizeMb:
+                        type: integer
+                      filePath:
+                        type: string
+                    type: object
+                type: object
+              listenAddress:
+                type: string
+              metrics:
+                properties:
+                  dashboards:
+                    properties:
+                      annotations:
+                        type: object
+                      enabled:
+                        type: boolean
+                      label:
+                        type: string
+                      labelValue:
+                        type: string
+                      namespace:
+                        type:
+                          - 'null'
+                          - string
+                    type: object
+                  dynamic:
+                    properties:
+                      config:
+                        properties:
+                          configMapName:
+                            type: string
+                          content:
+                            items: {}
+                            type: array
+                          createConfigMap:
+                            type: boolean
+                        type: object
+                      enabled:
+                        type: boolean
+                    type: object
+                  enableOpenMetrics:
+                    type: boolean
+                  enabled:
+                    type:
+                      - 'null'
+                      - array
+                  port:
+                    type: integer
+                  serviceAnnotations:
+                    type: object
+                  serviceMonitor:
+                    properties:
+                      annotations:
+                        type: object
+                      enabled:
+                        type: boolean
+                      interval:
+                        type: string
+                      jobLabel:
+                        type: string
+                      labels:
+                        type: object
+                      metricRelabelings:
+                        type:
+                          - 'null'
+                          - array
+                      relabelings:
+                        items:
+                          anyOf:
+                            - properties:
+                                action:
+                                  type: string
+                                replacement:
+                                  type: string
+                                sourceLabels:
+                                  items:
+                                    anyOf:
+                                      - type: string
+                                  type: array
+                                targetLabel:
+                                  type: string
+                        type: array
+                      scrapeTimeout:
+                        type:
+                          - 'null'
+                          - string
+                      tlsConfig:
+                        type: object
+                    type: object
+                  tls:
+                    properties:
+                      enabled:
+                        type: boolean
+                      server:
+                        properties:
+                          cert:
+                            type: string
+                          existingSecret:
+                            type: string
+                          extraDnsNames:
+                            items: {}
+                            type: array
+                          extraIpAddresses:
+                            items: {}
+                            type: array
+                          key:
+                            type: string
+                          mtls:
+                            properties:
+                              enabled:
+                                type: boolean
+                              key:
+                                type: string
+                              name:
+                                type: 'null'
+                              useSecret:
+                                type: boolean
+                            type: object
+                        type: object
+                    type: object
+                type: object
+              networkPolicyCorrelation:
+                properties:
+                  enabled:
+                    type: boolean
+                type: object
+              peerService:
+                properties:
+                  clusterDomain:
+                    type: string
+                  targetPort:
+                    type: integer
+                type: object
+              preferIpv6:
+                type: boolean
+              redact:
+                properties:
+                  enabled:
+                    type: boolean
+                  http:
+                    properties:
+                      headers:
+                        properties:
+                          allow:
+                            items: {}
+                            type: array
+                          deny:
+                            items: {}
+                            type: array
+                        type: object
+                      urlQuery:
+                        type: boolean
+                      userInfo:
+                        type: boolean
+                    type: object
+                  kafka:
+                    properties:
+                      apiKey:
+                        type: boolean
+                    type: object
+                type: object
+              relay:
+                properties:
+                  affinity:
+                    properties:
+                      podAffinity:
+                        properties:
+                          requiredDuringSchedulingIgnoredDuringExecution:
+                            items:
+                              anyOf:
+                                - properties:
+                                    labelSelector:
+                                      properties:
+                                        matchLabels:
+                                          properties:
+                                            k8s-app:
+                                              type: string
+                                          type: object
+                                      type: object
+                                    topologyKey:
+                                      type: string
+                            type: array
+                        type: object
+                    type: object
+                  annotations:
+                    type: object
+                  enabled:
+                    type: boolean
+                  extraEnv:
+                    items: {}
+                    type: array
+                  extraVolumeMounts:
+                    items: {}
+                    type: array
+                  extraVolumes:
+                    items: {}
+                    type: array
+                  gops:
+                    properties:
+                      enabled:
+                        type: boolean
+                      port:
+                        type: integer
+                    type: object
+                  image:
+                    properties:
+                      digest:
+                        type: string
+                      override:
+                        type:
+                          - 'null'
+                          - string
+                      pullPolicy:
+                        type: string
+                      repository:
+                        type: string
+                      tag:
+                        type: string
+                      useDigest:
+                        type: boolean
+                    type: object
+                  listenHost:
+                    type: string
+                  listenPort:
+                    type: string
+                  logOptions:
+                    properties:
+                      format:
+                        type:
+                          - 'null'
+                          - string
+                      level:
+                        type:
+                          - 'null'
+                          - string
+                    type: object
+                  nodeSelector:
+                    properties:
+                      kubernetes.io/os:
+                        type: string
+                    type: object
+                  podAnnotations:
+                    type: object
+                  podDisruptionBudget:
+                    properties:
+                      enabled:
+                        type: boolean
+                      maxUnavailable:
+                        type:
+                          - 'null'
+                          - integer
+                          - string
+                      minAvailable:
+                        type:
+                          - 'null'
+                          - integer
+                          - string
+                      unhealthyPodEvictionPolicy:
+                        type:
+                          - 'null'
+                          - string
+                    type: object
+                  podLabels:
+                    type: object
+                  podSecurityContext:
+                    properties:
+                      fsGroup:
+                        type: integer
+                      seccompProfile:
+                        properties:
+                          type:
+                            type: string
+                        type: object
+                    type: object
+                  pprof:
+                    properties:
+                      address:
+                        type: string
+                      blockProfileRate:
+                        type: integer
+                      enabled:
+                        type: boolean
+                      mutexProfileFraction:
+                        type: integer
+                      port:
+                        type: integer
+                    type: object
+                  priorityClassName:
+                    type: string
+                  prometheus:
+                    properties:
+                      enabled:
+                        type: boolean
+                      port:
+                        type: integer
+                      serviceMonitor:
+                        properties:
+                          annotations:
+                            type: object
+                          enabled:
+                            type: boolean
+                          interval:
+                            type: string
+                          labels:
+                            type: object
+                          metricRelabelings:
+                            type:
+                              - 'null'
+                              - array
+                          relabelings:
+                            type:
+                              - 'null'
+                              - array
+                          scrapeTimeout:
+                            type:
+                              - 'null'
+                              - string
+                        type: object
+                    type: object
+                  replicas:
+                    type: integer
+                  resources:
+                    type: object
+                  retryTimeout:
+                    type:
+                      - 'null'
+                      - string
+                  rollOutPods:
+                    type: boolean
+                  securityContext:
+                    properties:
+                      allowPrivilegeEscalation:
+                        type: boolean
+                      capabilities:
+                        properties:
+                          drop:
+                            items:
+                              anyOf:
+                                - type: string
+                            type: array
+                        type: object
+                      runAsGroup:
+                        type: integer
+                      runAsNonRoot:
+                        type: boolean
+                      runAsUser:
+                        type: integer
+                      seccompProfile:
+                        properties:
+                          type:
+                            type: string
+                        type: object
+                    type: object
+                  service:
+                    properties:
+                      nodePort:
+                        type: integer
+                      type:
+                        type: string
+                    type: object
+                  sortBufferDrainTimeout:
+                    type:
+                      - 'null'
+                      - string
+                  sortBufferLenMax:
+                    type:
+                      - 'null'
+                      - integer
+                  terminationGracePeriodSeconds:
+                    type: integer
+                  tls:
+                    properties:
+                      client:
+                        properties:
+                          cert:
+                            type: string
+                          existingSecret:
+                            type: string
+                          key:
+                            type: string
+                        type: object
+                      server:
+                        properties:
+                          cert:
+                            type: string
+                          enabled:
+                            type: boolean
+                          existingSecret:
+                            type: string
+                          extraDnsNames:
+                            items: {}
+                            type: array
+                          extraIpAddresses:
+                            items: {}
+                            type: array
+                          key:
+                            type: string
+                          mtls:
+                            type: boolean
+                          relayName:
+                            type: string
+                        type: object
+                    type: object
+                  tolerations:
+                    items: {}
+                    type: array
+                  topologySpreadConstraints:
+                    items: {}
+                    type: array
+                  updateStrategy:
+                    properties:
+                      rollingUpdate:
+                        properties:
+                          maxUnavailable:
+                            type:
+                              - integer
+                              - string
+                        type: object
+                      type:
+                        type: string
+                    type: object
+                type: object
+              skipUnknownCGroupIDs:
+                type:
+                  - 'null'
+                  - boolean
+              socketPath:
+                type: string
+              tls:
+                properties:
+                  auto:
+                    properties:
+                      certManagerIssuerRef:
+                        type: object
+                      certValidityDuration:
+                        type: integer
+                      enabled:
+                        type: boolean
+                      method:
+                        type: string
+                      schedule:
+                        type: string
+                    type: object
+                  enabled:
+                    type: boolean
+                  server:
+                    properties:
+                      cert:
+                        type: string
+                      existingSecret:
+                        type: string
+                      extraDnsNames:
+                        items: {}
+                        type: array
+                      extraIpAddresses:
+                        items: {}
+                        type: array
+                      key:
+                        type: string
+                    type: object
+                type: object
+              ui:
+                properties:
+                  affinity:
+                    type: object
+                  annotations:
+                    type: object
+                  backend:
+                    properties:
+                      extraEnv:
+                        items: {}
+                        type: array
+                      extraVolumeMounts:
+                        items: {}
+                        type: array
+                      extraVolumes:
+                        items: {}
+                        type: array
+                      image:
+                        properties:
+                          digest:
+                            type: string
+                          override:
+                            type:
+                              - 'null'
+                              - string
+                          pullPolicy:
+                            type: string
+                          repository:
+                            type: string
+                          tag:
+                            type: string
+                          useDigest:
+                            type: boolean
+                        type: object
+                      livenessProbe:
+                        properties:
+                          enabled:
+                            type: boolean
+                        type: object
+                      readinessProbe:
+                        properties:
+                          enabled:
+                            type: boolean
+                        type: object
+                      resources:
+                        type: object
+                      securityContext:
+                        properties:
+                          allowPrivilegeEscalation:
+                            type: boolean
+                        type: object
+                    type: object
+                  baseUrl:
+                    type: string
+                  enabled:
+                    type: boolean
+                  frontend:
+                    properties:
+                      extraEnv:
+                        items: {}
+                        type: array
+                      extraVolumeMounts:
+                        items: {}
+                        type: array
+                      extraVolumes:
+                        items: {}
+                        type: array
+                      image:
+                        properties:
+                          digest:
+                            type: string
+                          override:
+                            type:
+                              - 'null'
+                              - string
+                          pullPolicy:
+                            type: string
+                          repository:
+                            type: string
+                          tag:
+                            type: string
+                          useDigest:
+                            type: boolean
+                        type: object
+                      resources:
+                        type: object
+                      securityContext:
+                        properties:
+                          allowPrivilegeEscalation:
+                            type: boolean
+                        type: object
+                      server:
+                        properties:
+                          ipv6:
+                            properties:
+                              enabled:
+                                type: boolean
+                            type: object
+                        type: object
+                    type: object
+                  ingress:
+                    properties:
+                      annotations:
+                        type: object
+                      className:
+                        type: string
+                      enabled:
+                        type: boolean
+                      hosts:
+                        items:
+                          anyOf:
+                            - type: string
+                        type: array
+                      labels:
+                        type: object
+                      tls:
+                        items: {}
+                        type: array
+                    type: object
+                  labels:
+                    type: object
+                  nodeSelector:
+                    properties:
+                      kubernetes.io/os:
+                        type: string
+                    type: object
+                  podAnnotations:
+                    type: object
+                  podDisruptionBudget:
+                    properties:
+                      enabled:
+                        type: boolean
+                      maxUnavailable:
+                        type:
+                          - 'null'
+                          - integer
+                          - string
+                      minAvailable:
+                        type:
+                          - 'null'
+                          - integer
+                          - string
+                      unhealthyPodEvictionPolicy:
+                        type:
+                          - 'null'
+                          - string
+                    type: object
+                  podLabels:
+                    type: object
+                  priorityClassName:
+                    type: string
+                  replicas:
+                    type: integer
+                  rollOutPods:
+                    type: boolean
+                  securityContext:
+                    properties:
+                      fsGroup:
+                        type: integer
+                      runAsGroup:
+                        type: integer
+                      runAsUser:
+                        type: integer
+                    type: object
+                  service:
+                    properties:
+                      annotations:
+                        type: object
+                      labels:
+                        type: object
+                      nodePort:
+                        type: integer
+                      type:
+                        type: string
+                    type: object
+                  standalone:
+                    properties:
+                      enabled:
+                        type: boolean
+                      tls:
+                        properties:
+                          certsVolume:
+                            type: object
+                        type: object
+                    type: object
+                  tls:
+                    properties:
+                      client:
+                        properties:
+                          cert:
+                            type: string
+                          existingSecret:
+                            type: string
+                          key:
+                            type: string
+                        type: object
+                    type: object
+                  tmpVolume:
+                    type: object
+                  tolerations:
+                    items: {}
+                    type: array
+                  topologySpreadConstraints:
+                    items: {}
+                    type: array
+                  updateStrategy:
+                    properties:
+                      rollingUpdate:
+                        properties:
+                          maxUnavailable:
+                            type:
+                              - integer
+                              - string
+                        type: object
+                      type:
+                        type: string
+                    type: object
+                type: object
+            type: object
+          identityAllocationMode:
+            type: string
+          identityChangeGracePeriod:
+            type: string
+          identityManagementMode:
+            enum:
+              - agent
+              - operator
+              - both
+          image:
+            properties:
+              digest:
+                type: string
+              override:
+                type:
+                  - 'null'
+                  - string
+              pullPolicy:
+                type: string
+              repository:
+                type: string
+              tag:
+                type: string
+              useDigest:
+                type: boolean
+            type: object
+          imagePullSecrets:
+            items: {}
+            type: array
+          ingressController:
+            properties:
+              default:
+                type: boolean
+              defaultSecretName:
+                type:
+                  - 'null'
+                  - string
+              defaultSecretNamespace:
+                type:
+                  - 'null'
+                  - string
+              enableProxyProtocol:
+                type: boolean
+              enabled:
+                type: boolean
+              enforceHttps:
+                type: boolean
+              hostNetwork:
+                properties:
+                  enabled:
+                    type: boolean
+                  nodes:
+                    properties:
+                      matchLabels:
+                        type: object
+                    type: object
+                  sharedListenerPort:
+                    type: integer
+                type: object
+              ingressLBAnnotationPrefixes:
+                items:
+                  anyOf:
+                    - type: string
+                    - type: string
+                    - type: string
+                    - type: string
+                    - type: string
+                type: array
+              loadbalancerMode:
+                type: string
+              secretsNamespace:
+                properties:
+                  create:
+                    type: boolean
+                  name:
+                    type: string
+                  sync:
+                    type: boolean
+                type: object
+              service:
+                properties:
+                  allocateLoadBalancerNodePorts:
+                    type:
+                      - 'null'
+                      - boolean
+                  annotations:
+                    type: object
+                  externalTrafficPolicy:
+                    type: string
+                  insecureNodePort:
+                    type:
+                      - 'null'
+                      - integer
+                  labels:
+                    type: object
+                  loadBalancerClass:
+                    type:
+                      - 'null'
+                      - string
+                  loadBalancerIP:
+                    type:
+                      - 'null'
+                      - string
+                  name:
+                    type: string
+                  secureNodePort:
+                    type:
+                      - 'null'
+                      - integer
+                  type:
+                    type: string
+                type: object
+            type: object
+          initResources:
+            type: object
+          installNoConntrackIptablesRules:
+            type: boolean
+          ipMasqAgent:
+            properties:
+              enabled:
+                type: boolean
+            type: object
+          ipam:
+            properties:
+              ciliumNodeUpdateRate:
+                type: string
+              installUplinkRoutesForDelegatedIPAM:
+                type: boolean
+              mode:
+                type: string
+              multiPoolPreAllocation:
+                type: string
+              nodeSpec:
+                properties:
+                  ipamMaxAllocate:
+                    type:
+                      - 'null'
+                      - integer
+                  ipamMinAllocate:
+                    type:
+                      - 'null'
+                      - integer
+                  ipamPreAllocate:
+                    type:
+                      - 'null'
+                      - integer
+                  ipamStaticIPTags:
+                    items: {}
+                    type: array
+                type: object
+              operator:
+                properties:
+                  autoCreateCiliumPodIPPools:
+                    type: object
+                  clusterPoolIPv4MaskSize:
+                    type: integer
+                  clusterPoolIPv4PodCIDRList:
+                    items:
+                      anyOf:
+                        - type: string
+                    type:
+                      - array
+                      - string
+                  clusterPoolIPv6MaskSize:
+                    type: integer
+                  clusterPoolIPv6PodCIDRList:
+                    items:
+                      anyOf:
+                        - type: string
+                    type:
+                      - array
+                      - string
+                  externalAPILimitBurstSize:
+                    type:
+                      - 'null'
+                      - integer
+                  externalAPILimitQPS:
+                    type:
+                      - 'null'
+                      - number
+                type: object
+            type: object
+          iptablesRandomFully:
+            type: boolean
+          ipv4:
+            properties:
+              enabled:
+                type: boolean
+            type: object
+          ipv4NativeRoutingCIDR:
+            type: string
+          ipv6:
+            properties:
+              enabled:
+                type: boolean
+            type: object
+          ipv6NativeRoutingCIDR:
+            type: string
+          k8s:
+            properties:
+              requireIPv4PodCIDR:
+                type: boolean
+              requireIPv6PodCIDR:
+                type: boolean
+            type: object
+          k8sClientExponentialBackoff:
+            properties:
+              backoffBaseSeconds:
+                type: integer
+              backoffMaxDurationSeconds:
+                type: integer
+              enabled:
+                type: boolean
+            type: object
+          k8sClientRateLimit:
+            properties:
+              burst:
+                type:
+                  - 'null'
+                  - integer
+              operator:
+                properties:
+                  burst:
+                    type:
+                      - 'null'
+                      - integer
+                  qps:
+                    type:
+                      - 'null'
+                      - integer
+                type: object
+              qps:
+                type:
+                  - 'null'
+                  - integer
+            type: object
+          k8sNetworkPolicy:
+            properties:
+              enabled:
+                type: boolean
+            type: object
+          k8sServiceHost:
+            type: string
+          k8sServiceHostRef:
+            properties:
+              key:
+                type:
+                  - string
+                  - 'null'
+              name:
+                type:
+                  - string
+                  - 'null'
+            type: object
+          k8sServiceLookupConfigMapName:
+            type:
+              - 'null'
+              - string
+          k8sServiceLookupNamespace:
+            type:
+              - 'null'
+              - string
+          k8sServicePort:
+            type:
+              - string
+              - integer
+          keepDeprecatedLabels:
+            type: boolean
+          keepDeprecatedProbes:
+            type: boolean
+          kubeConfigPath:
+            type: string
+          kubeProxyReplacement:
+            type:
+              - string
+              - boolean
+          kubeProxyReplacementHealthzBindAddr:
+            type: string
+          l2NeighDiscovery:
+            properties:
+              enabled:
+                type: boolean
+            type: object
+          l2announcements:
+            properties:
+              enabled:
+                type: boolean
+            type: object
+          l2podAnnouncements:
+            properties:
+              enabled:
+                type: boolean
+              interface:
+                type: string
+            type: object
+          l7Proxy:
+            type: boolean
+          livenessProbe:
+            properties:
+              failureThreshold:
+                type: integer
+              periodSeconds:
+                type: integer
+              requireK8sConnectivity:
+                type: boolean
+            type: object
+          loadBalancer:
+            properties:
+              acceleration:
+                type: string
+              l7:
+                properties:
+                  algorithm:
+                    type: string
+                  backend:
+                    type: string
+                  ports:
+                    items: {}
+                    type: array
+                type: object
+            type: object
+          localRedirectPolicies:
+            properties:
+              addressMatcherCIDRs:
+                type:
+                  - 'null'
+                  - array
+              enabled:
+                type: boolean
+            type: object
+          localRedirectPolicy:
+            type: boolean
+          logSystemLoad:
+            type: boolean
+          maglev:
+            type: object
+          monitor:
+            properties:
+              enabled:
+                type: boolean
+            type: object
+          name:
+            type: string
+          namespaceOverride:
+            type:
+              - 'null'
+              - string
+          nat:
+            properties:
+              mapStatsEntries:
+                type: integer
+              mapStatsInterval:
+                type: string
+            type: object
+          nat46x64Gateway:
+            properties:
+              enabled:
+                type: boolean
+            type: object
+          nodeIPAM:
+            properties:
+              enabled:
+                type: boolean
+            type: object
+          nodePort:
+            properties:
+              addresses:
+                type:
+                  - 'null'
+                  - string
+                  - array
+              autoProtectPortRange:
+                type: boolean
+              bindProtection:
+                type: boolean
+              enableHealthCheck:
+                type: boolean
+              enableHealthCheckLoadBalancerIP:
+                type: boolean
+            type: object
+          nodeSelector:
+            properties:
+              kubernetes.io/os:
+                type: string
+            type: object
+          nodeSelectorLabels:
+            type: boolean
+          nodeinit:
+            properties:
+              affinity:
+                type: object
+              annotations:
+                type: object
+              bootstrapFile:
+                type: string
+              enabled:
+                type: boolean
+              extraEnv:
+                items: {}
+                type: array
+              extraVolumeMounts:
+                items: {}
+                type: array
+              extraVolumes:
+                items: {}
+                type: array
+              image:
+                properties:
+                  digest:
+                    type: string
+                  override:
+                    type:
+                      - 'null'
+                      - string
+                  pullPolicy:
+                    type: string
+                  repository:
+                    type: string
+                  tag:
+                    type: string
+                  useDigest:
+                    type: boolean
+                type: object
+              nodeSelector:
+                properties:
+                  kubernetes.io/os:
+                    type: string
+                type: object
+              podAnnotations:
+                type: object
+              podLabels:
+                type: object
+              podSecurityContext:
+                properties:
+                  appArmorProfile:
+                    properties:
+                      type:
+                        type: string
+                    type: object
+                type: object
+              prestop:
+                properties:
+                  postScript:
+                    type: string
+                  preScript:
+                    type: string
+                type: object
+              priorityClassName:
+                type: string
+              resources:
+                properties:
+                  requests:
+                    properties:
+                      cpu:
+                        type:
+                          - integer
+                          - string
+                      memory:
+                        type: string
+                    type: object
+                type: object
+              securityContext:
+                properties:
+                  allowPrivilegeEscalation:
+                    type: boolean
+                  capabilities:
+                    properties:
+                      add:
+                        items:
+                          anyOf:
+                            - type: string
+                            - type: string
+                            - type: string
+                            - type: string
+                            - type: string
+                        type: array
+                    type: object
+                  privileged:
+                    type: boolean
+                  seLinuxOptions:
+                    properties:
+                      level:
+                        type: string
+                      type:
+                        type: string
+                    type: object
+                type: object
+              startup:
+                properties:
+                  postScript:
+                    type: string
+                  preScript:
+                    type: string
+                type: object
+              tolerations:
+                items:
+                  anyOf:
+                    - properties:
+                        operator:
+                          type: string
+                type: array
+              updateStrategy:
+                properties:
+                  type:
+                    type: string
+                type: object
+              waitForCloudInit:
+                type: boolean
+            type: object
+          operator:
+            properties:
+              affinity:
+                properties:
+                  podAntiAffinity:
+                    properties:
+                      requiredDuringSchedulingIgnoredDuringExecution:
+                        items:
+                          anyOf:
+                            - properties:
+                                labelSelector:
+                                  properties:
+                                    matchLabels:
+                                      properties:
+                                        io.cilium/app:
+                                          type: string
+                                      type: object
+                                  type: object
+                                topologyKey:
+                                  type: string
+                        type: array
+                    type: object
+                type: object
+              annotations:
+                type: object
+              dashboards:
+                properties:
+                  annotations:
+                    type: object
+                  enabled:
+                    type: boolean
+                  label:
+                    type: string
+                  labelValue:
+                    type: string
+                  namespace:
+                    type:
+                      - 'null'
+                      - string
+                type: object
+              dnsPolicy:
+                type: string
+              enabled:
+                type: boolean
+              endpointGCInterval:
+                type: string
+              extraArgs:
+                items: {}
+                type: array
+              extraEnv:
+                items: {}
+                type: array
+              extraHostPathMounts:
+                items: {}
+                type: array
+              extraVolumeMounts:
+                items: {}
+                type: array
+              extraVolumes:
+                items: {}
+                type: array
+              hostNetwork:
+                type: boolean
+              identityGCInterval:
+                type: string
+              identityHeartbeatTimeout:
+                type: string
+              image:
+                properties:
+                  alibabacloudDigest:
+                    type: string
+                  awsDigest:
+                    type: string
+                  azureDigest:
+                    type: string
+                  genericDigest:
+                    type: string
+                  override:
+                    type:
+                      - 'null'
+                      - string
+                  pullPolicy:
+                    type: string
+                  repository:
+                    type: string
+                  suffix:
+                    type: string
+                  tag:
+                    type: string
+                  useDigest:
+                    type: boolean
+                type: object
+              nodeGCInterval:
+                type: string
+              nodeSelector:
+                properties:
+                  kubernetes.io/os:
+                    type: string
+                type: object
+              podAnnotations:
+                type: object
+              podDisruptionBudget:
+                properties:
+                  enabled:
+                    type: boolean
+                  maxUnavailable:
+                    type:
+                      - 'null'
+                      - integer
+                      - string
+                  minAvailable:
+                    type:
+                      - 'null'
+                      - integer
+                      - string
+                  unhealthyPodEvictionPolicy:
+                    type:
+                      - 'null'
+                      - string
+                type: object
+              podLabels:
+                type: object
+              podSecurityContext:
+                properties:
+                  seccompProfile:
+                    properties:
+                      type:
+                        type: string
+                    type: object
+                type: object
+              pprof:
+                properties:
+                  address:
+                    type: string
+                  blockProfileRate:
+                    type: integer
+                  enabled:
+                    type: boolean
+                  mutexProfileFraction:
+                    type: integer
+                  port:
+                    type: integer
+                type: object
+              priorityClassName:
+                type: string
+              prometheus:
+                properties:
+                  enabled:
+                    type: boolean
+                  metricsService:
+                    type: boolean
+                  port:
+                    type: integer
+                  serviceMonitor:
+                    properties:
+                      annotations:
+                        type: object
+                      enabled:
+                        type: boolean
+                      interval:
+                        type: string
+                      jobLabel:
+                        type: string
+                      labels:
+                        type: object
+                      metricRelabelings:
+                        type:
+                          - 'null'
+                          - array
+                      relabelings:
+                        type:
+                          - 'null'
+                          - array
+                      scrapeTimeout:
+                        type:
+                          - 'null'
+                          - string
+                    type: object
+                  tls:
+                    properties:
+                      enabled:
+                        type: boolean
+                      server:
+                        properties:
+                          existingSecret:
+                            type: string
+                          mtls:
+                            properties:
+                              enabled:
+                                type: boolean
+                            type: object
+                        type: object
+                    type: object
+                type: object
+              removeNodeTaints:
+                type: boolean
+              replicas:
+                type: integer
+              resources:
+                type: object
+              rollOutPods:
+                type: boolean
+              securityContext:
+                properties:
+                  allowPrivilegeEscalation:
+                    type: boolean
+                  capabilities:
+                    properties:
+                      drop:
+                        items:
+                          anyOf:
+                            - type: string
+                        type: array
+                    type: object
+                type: object
+              setNodeNetworkStatus:
+                type: boolean
+              setNodeTaints:
+                type:
+                  - 'null'
+                  - boolean
+              skipCRDCreation:
+                type: boolean
+              tolerations:
+                items:
+                  anyOf:
+                    - properties:
+                        key:
+                          type: string
+                        operator:
+                          type: string
+                    - properties:
+                        key:
+                          type: string
+                        operator:
+                          type: string
+                    - properties:
+                        key:
+                          type: string
+                        operator:
+                          type: string
+                    - properties:
+                        key:
+                          type: string
+                        operator:
+                          type: string
+                type:
+                  - 'null'
+                  - array
+              topologySpreadConstraints:
+                items: {}
+                type: array
+              unmanagedPodWatcher:
+                properties:
+                  intervalSeconds:
+                    type: integer
+                  restart:
+                    type: boolean
+                  selector:
+                    type:
+                      - 'null'
+                      - string
+                type: object
+              updateStrategy:
+                properties:
+                  rollingUpdate:
+                    properties:
+                      maxSurge:
+                        type:
+                          - integer
+                          - string
+                      maxUnavailable:
+                        type:
+                          - integer
+                          - string
+                    type: object
+                  type:
+                    type: string
+                type: object
+            type: object
+          pmtuDiscovery:
+            properties:
+              enabled:
+                type: boolean
+              packetizationLayerPMTUDMode:
+                type: string
+            type: object
+          podAnnotations:
+            type: object
+          podLabels:
+            type: object
+          podSecurityContext:
+            properties:
+              appArmorProfile:
+                properties:
+                  type:
+                    type: string
+                type: object
+              seccompProfile:
+                properties:
+                  type:
+                    type: string
+                type: object
+            type: object
+          policyCIDRMatchMode:
+            type:
+              - 'null'
+              - string
+              - array
+          policyDenyResponse:
+            type: string
+          policyEnforcementMode:
+            type: string
+          pprof:
+            properties:
+              address:
+                type: string
+              blockProfileRate:
+                type: integer
+              enabled:
+                type: boolean
+              mutexProfileFraction:
+                type: integer
+              port:
+                type: integer
+            type: object
+          preflight:
+            properties:
+              affinity:
+                properties:
+                  podAffinity:
+                    properties:
+                      requiredDuringSchedulingIgnoredDuringExecution:
+                        items:
+                          anyOf:
+                            - properties:
+                                labelSelector:
+                                  properties:
+                                    matchLabels:
+                                      properties:
+                                        k8s-app:
+                                          type: string
+                                      type: object
+                                  type: object
+                                topologyKey:
+                                  type: string
+                        type: array
+                    type: object
+                type: object
+              annotations:
+                type: object
+              enabled:
+                type: boolean
+              envoy:
+                properties:
+                  image:
+                    properties:
+                      digest:
+                        type: string
+                      override:
+                        type:
+                          - 'null'
+                          - string
+                      pullPolicy:
+                        type: string
+                      repository:
+                        type: string
+                      tag:
+                        type: string
+                      useDigest:
+                        type: boolean
+                    type: object
+                type: object
+              extraEnv:
+                items: {}
+                type: array
+              extraVolumeMounts:
+                items: {}
+                type: array
+              extraVolumes:
+                items: {}
+                type: array
+              image:
+                properties:
+                  digest:
+                    type: string
+                  override:
+                    type:
+                      - 'null'
+                      - string
+                  pullPolicy:
+                    type: string
+                  repository:
+                    type: string
+                  tag:
+                    type: string
+                  useDigest:
+                    type: boolean
+                type: object
+              nodeSelector:
+                properties:
+                  kubernetes.io/os:
+                    type: string
+                type: object
+              podAnnotations:
+                type: object
+              podDisruptionBudget:
+                properties:
+                  enabled:
+                    type: boolean
+                  maxUnavailable:
+                    type:
+                      - 'null'
+                      - integer
+                      - string
+                  minAvailable:
+                    type:
+                      - 'null'
+                      - integer
+                      - string
+                  unhealthyPodEvictionPolicy:
+                    type:
+                      - 'null'
+                      - string
+                type: object
+              podLabels:
+                type: object
+              podSecurityContext:
+                type: object
+              priorityClassName:
+                type: string
+              readinessProbe:
+                properties:
+                  initialDelaySeconds:
+                    type: integer
+                  periodSeconds:
+                    type: integer
+                type: object
+              resources:
+                type: object
+              securityContext:
+                properties:
+                  allowPrivilegeEscalation:
+                    type: boolean
+                type: object
+              terminationGracePeriodSeconds:
+                type: integer
+              tofqdnsPreCache:
+                type: string
+              tolerations:
+                items:
+                  anyOf:
+                    - properties:
+                        operator:
+                          type: string
+                type: array
+              updateStrategy:
+                properties:
+                  type:
+                    type: string
+                type: object
+              validateCNPs:
+                type: boolean
+            type: object
+          priorityClassName:
+            type: string
+          prometheus:
+            properties:
+              controllerGroupMetrics:
+                items:
+                  anyOf:
+                    - type: string
+                    - type: string
+                    - type: string
+                type: array
+              enabled:
+                type: boolean
+              metrics:
+                type:
+                  - 'null'
+                  - array
+              metricsService:
+                type: boolean
+              port:
+                type: integer
+              serviceMonitor:
+                properties:
+                  annotations:
+                    type: object
+                  enabled:
+                    type: boolean
+                  interval:
+                    type: string
+                  jobLabel:
+                    type: string
+                  labels:
+                    type: object
+                  metricRelabelings:
+                    type:
+                      - 'null'
+                      - array
+                  relabelings:
+                    items:
+                      anyOf:
+                        - properties:
+                            action:
+                              type: string
+                            replacement:
+                              type: string
+                            sourceLabels:
+                              items:
+                                anyOf:
+                                  - type: string
+                              type: array
+                            targetLabel:
+                              type: string
+                    type: array
+                  scrapeTimeout:
+                    type:
+                      - 'null'
+                      - string
+                  trustCRDsExist:
+                    type: boolean
+                type: object
+            type: object
+          rbac:
+            properties:
+              create:
+                type: boolean
+            type: object
+          readinessProbe:
+            properties:
+              failureThreshold:
+                type: integer
+              periodSeconds:
+                type: integer
+            type: object
+          resourceQuotas:
+            properties:
+              cilium:
+                properties:
+                  hard:
+                    properties:
+                      pods:
+                        type: string
+                    type: object
+                type: object
+              enabled:
+                type: boolean
+              operator:
+                properties:
+                  hard:
+                    properties:
+                      pods:
+                        type: string
+                    type: object
+                type: object
+            type: object
+          resources:
+            type: object
+          rollOutCiliumPods:
+            type: boolean
+          routingMode:
+            type: string
+          scheduling:
+            properties:
+              mode:
+                enum:
+                  - anti-affinity
+                  - kube-scheduler
+            type: object
+          sctp:
+            properties:
+              enabled:
+                type: boolean
+            type: object
+          secretsNamespaceAnnotations:
+            type: object
+          secretsNamespaceLabels:
+            type: object
+          securityContext:
+            properties:
+              allowPrivilegeEscalation:
+                type: boolean
+              capabilities:
+                properties:
+                  applySysctlOverwrites:
+                    items:
+                      anyOf:
+                        - type: string
+                        - type: string
+                        - type: string
+                    type: array
+                  ciliumAgent:
+                    items:
+                      anyOf:
+                        - type: string
+                        - type: string
+                        - type: string
+                        - type: string
+                        - type: string
+                        - type: string
+                        - type: string
+                        - type: string
+                        - type: string
+                        - type: string
+                        - type: string
+                        - type: string
+                        - type: string
+                    type: array
+                  cleanCiliumState:
+                    items:
+                      anyOf:
+                        - type: string
+                        - type: string
+                        - type: string
+                        - type: string
+                    type: array
+                  mountCgroup:
+                    items:
+                      anyOf:
+                        - type: string
+                        - type: string
+                        - type: string
+                    type: array
+                type: object
+              privileged:
+                type: boolean
+              seLinuxOptions:
+                properties:
+                  level:
+                    type: string
+                  type:
+                    type: string
+                type: object
+            type: object
+          serviceAccounts:
+            properties:
+              cilium:
+                properties:
+                  annotations:
+                    type: object
+                  automount:
+                    type: boolean
+                  create:
+                    type: boolean
+                  name:
+                    type: string
+                type: object
+              clustermeshApiserver:
+                properties:
+                  annotations:
+                    type: object
+                  automount:
+                    type: boolean
+                  create:
+                    type: boolean
+                  name:
+                    type: string
+                type: object
+              clustermeshcertgen:
+                properties:
+                  annotations:
+                    type: object
+                  automount:
+                    type: boolean
+                  create:
+                    type: boolean
+                  name:
+                    type: string
+                type: object
+              corednsMCSAPI:
+                properties:
+                  annotations:
+                    type: object
+                  automount:
+                    type: boolean
+                  create:
+                    type: boolean
+                  name:
+                    type: string
+                type: object
+              envoy:
+                properties:
+                  annotations:
+                    type: object
+                  automount:
+                    type: boolean
+                  create:
+                    type: boolean
+                  name:
+                    type: string
+                type: object
+              hubblecertgen:
+                properties:
+                  annotations:
+                    type: object
+                  automount:
+                    type: boolean
+                  create:
+                    type: boolean
+                  name:
+                    type: string
+                type: object
+              nodeinit:
+                properties:
+                  annotations:
+                    type: object
+                  automount:
+                    type: boolean
+                  create:
+                    type: boolean
+                  enabled:
+                    type: boolean
+                  name:
+                    type: string
+                type: object
+              operator:
+                properties:
+                  annotations:
+                    type: object
+                  automount:
+                    type: boolean
+                  create:
+                    type: boolean
+                  name:
+                    type: string
+                type: object
+              preflight:
+                properties:
+                  annotations:
+                    type: object
+                  automount:
+                    type: boolean
+                  create:
+                    type: boolean
+                  name:
+                    type: string
+                type: object
+              relay:
+                properties:
+                  annotations:
+                    type: object
+                  automount:
+                    type: boolean
+                  create:
+                    type: boolean
+                  name:
+                    type: string
+                type: object
+              ui:
+                properties:
+                  annotations:
+                    type: object
+                  automount:
+                    type: boolean
+                  create:
+                    type: boolean
+                  name:
+                    type: string
+                type: object
+            type: object
+          serviceNoBackendResponse:
+            type: string
+          sleepAfterInit:
+            type: boolean
+          socketLB:
+            properties:
+              enabled:
+                type: boolean
+            type: object
+          standaloneDnsProxy:
+            properties:
+              annotations:
+                type: object
+              automountServiceAccountToken:
+                type: boolean
+              debug:
+                type: boolean
+              enabled:
+                type: boolean
+              image:
+                properties:
+                  digest:
+                    type: string
+                  override:
+                    type:
+                      - 'null'
+                      - string
+                  pullPolicy:
+                    type: string
+                  repository:
+                    type: string
+                  tag:
+                    type: string
+                  useDigest:
+                    type: boolean
+                type: object
+              nodeSelector:
+                properties:
+                  kubernetes.io/os:
+                    type: string
+                type: object
+              rollOutPods:
+                type: boolean
+              serverPort:
+                type: integer
+              tolerations:
+                items: {}
+                type: array
+              updateStrategy:
+                properties:
+                  rollingUpdate:
+                    properties:
+                      maxSurge:
+                        type: integer
+                      maxUnavailable:
+                        type: integer
+                    type: object
+                  type:
+                    type: string
+                type: object
+            type: object
+          startupProbe:
+            properties:
+              failureThreshold:
+                type: integer
+              periodSeconds:
+                type: integer
+            type: object
+          synchronizeK8sNodes:
+            type: boolean
+          sysctlfix:
+            properties:
+              enabled:
+                type: boolean
+            type: object
+          terminationGracePeriodSeconds:
+            type: integer
+          tls:
+            properties:
+              ca:
+                properties:
+                  cert:
+                    type: string
+                  certValidityDuration:
+                    type: integer
+                  key:
+                    type: string
+                type: object
+              caBundle:
+                properties:
+                  enabled:
+                    type: boolean
+                  key:
+                    type: string
+                  name:
+                    type: string
+                  useSecret:
+                    type: boolean
+                type: object
+              readSecretsOnlyFromSecretsNamespace:
+                type:
+                  - 'null'
+                  - boolean
+              secretSync:
+                properties:
+                  enabled:
+                    type:
+                      - 'null'
+                      - boolean
+                type: object
+              secretsBackend:
+                type:
+                  - 'null'
+                  - string
+              secretsNamespace:
+                properties:
+                  create:
+                    type: boolean
+                  name:
+                    type: string
+                type: object
+            type: object
+          tmpVolume:
+            type: object
+          tolerations:
+            items:
+              anyOf:
+                - properties:
+                    operator:
+                      type: string
+            type: array
+          tunnelPort:
+            type: integer
+          tunnelProtocol:
+            type: string
+          tunnelSourcePortRange:
+            type: string
+          underlayProtocol:
+            type: string
+          updateStrategy:
+            properties:
+              rollingUpdate:
+                properties:
+                  maxUnavailable:
+                    type:
+                      - integer
+                      - string
+                type: object
+              type:
+                type: string
+            type: object
+          upgradeCompatibility:
+            type:
+              - 'null'
+              - string
+          vtep:
+            properties:
+              cidr:
+                type: string
+              enabled:
+                type: boolean
+              endpoint:
+                type: string
+              mac:
+                type: string
+              mask:
+                type: string
+            type: object
+          waitForKubeProxy:
+            type: boolean
+          wellKnownIdentities:
+            properties:
+              enabled:
+                type: boolean
+            type: object
+        $schema: http://json-schema.org/draft-07/schema#
+        type: object
+  template:
+    spec:
+      fetch:
+        - imgpkgBundle:
+            image: registry.vkslab.internal/byo-addons/cni/isovalent/cilium:v1.19.0
+      template:
+        - helmTemplate:
+            path: chart
+            namespace: kube-system
+        - kbld:
+            paths:
+              - '-'
+              - .imgpkg/images.yml
+      deploy:
+        - kapp: {}

@@ -1,0 +1,11 @@
+apiVersion: addons.kubernetes.vmware.com/v1alpha1
+kind: AddonRepositoryInstall
+metadata:
+  name: cni-addons-repository-install
+  namespace: vmware-system-vks-public
+  annotations:
+    addons.kubernetes.vmware.com/target-repository-name: cni-addons-repository
+spec:
+  addonRepositoryRef:
+    name: cni-addons-repository
+    namespace: vmware-system-vks-public

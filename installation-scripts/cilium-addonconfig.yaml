@@ -1,0 +1,31 @@
+apiVersion: addons.kubernetes.vmware.com/v1alpha1
+kind: AddonInstall
+metadata:
+  name: vks-cilium-wl02-cni
+  namespace: carbon
+spec:
+  addonRef:
+    name: cilium
+  clusters:
+  - selector:
+      matchLabels:
+        cluster.x-k8s.io/cluster-name: vks-cilium-wl02-contour
+---
+
+apiVersion: addons.kubernetes.vmware.com/v1alpha1
+kind: AddonConfig
+metadata:
+  annotations:
+    clusteraddon.addons.kubernetes.vmware.com/owned-for-deletion: "true"
+  labels:
+    addon.kubernetes.vmware.com/addon-name: cilium
+    cluster.x-k8s.io/cluster-name: vks-cilium-wl02
+  name: vks-cilium-wl02-cni
+  namespace: carbon
+spec:
+  addonConfigDefinitionRef:
+    name: cilium.isovalent.com.1.19.0
+    namespace: vmware-system-vks-public
+  clusterName: vks-cilium-wl02
+  values:
+    kubeProxyReplacement: true

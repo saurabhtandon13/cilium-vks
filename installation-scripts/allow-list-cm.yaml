@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: addon-repo-allow-list-configmap
+  namespace: svc-tkg-domain-c1007
+data:
+  addon-repo-allow-list: cni-addons-repository

@@ -1,0 +1,19 @@
+apiVersion: addons.kubernetes.vmware.com/v1alpha1
+kind: AddonInstall
+metadata:
+  labels:
+    addons.kubernetes.vmware.com/internal: "true"
+  name: cilium
+  namespace: vmware-system-vks-public
+spec:
+  addonRef:
+    name: cilium
+    namespace: vmware-system-vks-public
+  clusters:
+    - constraints:
+        expression: "cluster.cniRefName() == 'cilium'"
+  crossNamespaceSelection: Allowed
+  releaseFilter:
+    ref:
+      name: cilium.isovalent.com.1.19.0
+      namespace: vmware-system-vks-public

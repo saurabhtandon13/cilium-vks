@@ -1,0 +1,78 @@
+apiVersion: cluster.x-k8s.io/v1beta2
+kind: Cluster
+metadata:
+  name: vks-cilium-wl02
+  namespace: carbon
+spec:
+  clusterNetwork:
+    pods:
+      cidrBlocks:
+      - 100.96.0.0/11
+    serviceDomain: cluster.local
+    services:
+      cidrBlocks:
+      - 100.64.0.0/13
+  topology:
+    classRef:
+      name: builtin-generic-v3.6.0
+      namespace: vmware-system-vks-public
+    controlPlane:
+      metadata:
+        annotations:
+          run.tanzu.vmware.com/resolve-os-image: os-name=photon
+      replicas: 1
+    variables:
+    - name: node
+      value: 
+        firewall:
+          inboundRules:
+            # etcd access from workers
+            - protocol: tcp
+              fromPort: 2379
+              toPort: 2380
+            # VXLAN overlay (Self and Workers)
+            - protocol: udp
+              fromPort: 8472
+              toPort: 8472
+            # Health checks (Self and Workers)
+            - protocol: tcp
+              fromPort: 4240
+              toPort: 4240
+            # ICMP for health checks
+            - protocol: icmp
+    - name: bootstrapAddons
+      value:
+        cniRef:
+          name: cilium
+    - name: vmClass
+      value: k8s-worker
+    - name: storageClass
+      value: vks-storage-policy
+    - name: kubernetes
+      value:
+        certificateRotation:
+          enabled: true
+          renewalDaysBeforeExpiry: 90
+    version: v1.35.0---vmware.2-vkr.4
+    workers:
+      machineDeployments:
+      - class: node-pool
+        metadata:
+          annotations:
+            run.tanzu.vmware.com/resolve-os-image: os-name=photon
+        name: node-pool-1
+        replicas: 1
+        variables:
+          overrides:
+           - name: node
+             value: 
+              firewall:
+               inboundRules:
+                 # Only Inbound rules are needed here (VXLAN, Health, ICMP)
+                 - protocol: udp
+                   fromPort: 8472
+                   toPort: 8472
+                 - protocol: tcp
+                   fromPort: 4240
+                   toPort: 4240
+                 - protocol: icmp

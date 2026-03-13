@@ -1,0 +1,21 @@
+apiVersion: addons.kubernetes.vmware.com/v1alpha1
+kind: AddonRepository
+metadata:
+  annotations:
+    addons.kubernetes.vmware.com/package-offerings: |
+      {
+        "repositoryVersion": "1.0.0",
+        "packages": {
+          "cilium.isovalent.com": {
+            "versions": ["1.19.0"]
+          }
+        }
+      }
+  name: cni-addons-repository
+  namespace: vmware-system-vks-public
+spec:
+  fetch:
+    imgpkgBundle:
+      imageURL: registry.vkslab.internal/byo-addons/cni/cni-addons:v1.0.0
+  targetRepositoryName: cni-addons-repository
+  version: 1.0.0

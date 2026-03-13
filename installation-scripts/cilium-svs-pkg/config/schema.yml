@@ -1,0 +1,7 @@
+#! schema.yaml
+
+#@data/values-schema
+#@schema/desc "OpenAPIv3 Schema"
+---
+#@schema/desc "The namespace in which Addon resources will be deployed"
+namespace: vmware-system-vks-public

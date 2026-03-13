@@ -1,0 +1,15 @@
+apiVersion: data.packaging.carvel.dev/v1alpha1
+kind: PackageMetadata
+metadata:
+  # This will be the name of our package metadata
+  name: cilium.isovalent.com
+  namespace: vmware-system-vks-public 
+spec:
+  displayName: "Cilium Carvel Package"
+  longDescription: "eBPF-based Networking, Security, and Observability"
+  shortDescription: "eBPF-based Networking, Security, and Observability"
+  categories:
+  - proxy-server
+  providerName: VMWare
+  maintainers:
+  - name: "Cilium"

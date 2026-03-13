@@ -1,0 +1,29 @@
+apiVersion: data.packaging.carvel.dev/v1alpha1
+kind: Package
+metadata:
+  name: cilium.isovalent.com.1.19.0
+  namespace: vmware-system-vks-public  
+spec:
+  refName: cilium.isovalent.com
+  version: 1.19.0
+  releaseNotes:
+    The initial release of the Cilium package by wrapping Helm Chart. Cilium Helm chart version is 1.19.0, Cilium version is 1.19.0.
+  valuesSchema:
+    openAPIv3:
+      title: cilium.isovalent.com
+      properties:
+  template:
+    spec:
+      fetch:
+      - imgpkgBundle:
+          image: registry.vkslab.internal/byo-addons/cni/isovalent/cilium:v1.19.0
+      template:
+      - helmTemplate:
+          path: chart
+          namespace: kube-system
+      - kbld:
+          paths:
+          - '-'
+          - .imgpkg/images.yml
+      deploy:
+      - kapp: {}

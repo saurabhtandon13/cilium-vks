@@ -1,0 +1,13 @@
+# this policy allows all traffic between pods in the same namespace. This is a default policy that allows all traffic within the same namespace. It is used to allow communication between pods in the same namespace without any restrictions. This policy is useful for allowing communication between pods that are part of the same application or service. It is also useful for allowing communication between pods that are part of the same team or project. This policy is not recommended for production environments as it allows all traffic within the same namespace, which can lead to security issues. It is recommended to use more restrictive policies in production environments to limit communication between pods and reduce the attack surface.
+apiVersion: cilium.io/v2
+kind: CiliumNetworkPolicy
+metadata:
+  name: allow-all-same-namespace
+  namespace: dev 
+spec:
+  endpointSelector:
+    matchLabels:
+      app: app1
+  ingress:
+  - fromEndpoints: 
+    - {}

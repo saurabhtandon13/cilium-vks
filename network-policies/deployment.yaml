@@ -1,0 +1,203 @@
+# Deployment is for testing network policies, so we are using netshoot image which has various network tools to test connectivity between pods. The command is set to sleep for a long time to keep the pod running for testing purposes. in dev namespace. ###
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app1
+  namespace: dev  
+  labels:
+    app: app1-dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app1
+  template:
+    metadata:
+      labels:
+        app: app1
+    spec:
+      containers:
+      - name: app1
+        image: mirror.gcr.io/nicolaka/netshoot:latest
+        command: ["sleep", "999999"]
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app2
+  namespace: dev  
+  labels:
+    app: app2-dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app2
+  template:
+    metadata:
+      labels:
+        app: app2
+    spec:
+      containers:
+      - name: app2
+        image: mirror.gcr.io/nicolaka/netshoot:latest
+        command: ["sleep", "999999"]
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app3
+  namespace: dev  
+  labels:
+    app: app3-dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app3
+  template:
+    metadata:
+      labels:
+        app: app3
+    spec:
+      containers:
+      - name: app3
+        image: mirror.gcr.io/nicolaka/netshoot:latest
+        command: ["sleep", "999999"]
+
+### The same deployments are repeated in staging namespace for testing network policies between namespaces. ###
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app1
+  namespace: staging  
+  labels:
+    app: app1-staging
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app1
+  template:
+    metadata:
+      labels:
+        app: app1
+    spec:
+      containers:
+      - name: app1
+        image: mirror.gcr.io/nicolaka/netshoot:latest
+        command: ["sleep", "999999"]
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app2
+  namespace: staging  
+  labels:
+    app: app2-staging
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app2
+  template:
+    metadata:
+      labels:
+        app: app2
+    spec:
+      containers:
+      - name: app2
+        image: mirror.gcr.io/nicolaka/netshoot:latest
+        command: ["sleep", "999999"]
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app3
+  namespace: staging  
+  labels:
+    app: app3-staging
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app3
+  template:
+    metadata:
+      labels:
+        app: app3
+    spec:
+      containers:
+      - name: app3
+        image: mirror.gcr.io/nicolaka/netshoot:latest
+        command: ["sleep", "999999"]
+
+# this is for testing network policies between namespaces, so we are using the same deployments in production namespace as well. The labels are different to differentiate between the two namespaces. ###
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app1
+  namespace: production 
+  labels:
+    app: app1-production
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app1
+  template:
+    metadata:
+      labels:
+        app: app1
+    spec:
+      containers:
+      - name: app1
+        image: mirror.gcr.io/nicolaka/netshoot:latest
+        command: ["sleep", "999999"]
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app2
+  namespace: production 
+  labels:
+    app: app2-production
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app2
+  template:
+    metadata:
+      labels:
+        app: app2
+    spec:
+      containers:
+      - name: app2
+        image: mirror.gcr.io/nicolaka/netshoot:latest
+        command: ["sleep", "999999"]
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app3
+  namespace: production  
+  labels:
+    app: app3-production
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app3
+  template:
+    metadata:
+      labels:
+        app: app3
+    spec:
+      containers:
+      - name: app3
+        image: mirror.gcr.io/nicolaka/netshoot:latest
+        command: ["sleep", "999999"]

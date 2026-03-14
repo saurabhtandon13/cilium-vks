@@ -1,0 +1,12 @@
+# this policy will deny all incomoming traffic from app1 pod in dev namepsace
+apiVersion: cilium.io/v2
+kind: CiliumNetworkPolicy
+metadata:
+  name: deny-all-app1-dev
+  namespace: dev
+spec:
+  endpointSelector:
+    matchLabels:
+      app: app1-dev
+  ingress:
+  - {}

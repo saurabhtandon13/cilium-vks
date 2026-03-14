@@ -1,0 +1,22 @@
+# In this network policy we will allow traffic to app1 pod which is in dev namespace from app2
+# pod which can be either in staging or production namespace. 
+apiVersion: cilium.io/v2
+kind: CiliumNetworkPolicy
+metadata:
+  name: allow-app2-from-app2-across-ns
+  namespace: dev
+spec:
+  endpointSelector:
+    matchLabels:
+      app: app1
+  ingress:
+  - fromEndpoints:
+    - matchLabels:
+        app: app2
+      matchExpressions:
+      - key: "k8s:io.kubernetes.pod.namespace"
+        operator: In
+        values:
+        - staging
+        - production
+

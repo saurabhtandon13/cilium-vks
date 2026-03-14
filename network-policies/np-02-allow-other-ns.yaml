@@ -1,0 +1,15 @@
+# in this policy we will allow the traffic from the pod running in namespace staging with app label as app2 to talk pod app 1 running in dec namespace
+apiVersion: cilium.io/v2
+kind: CiliumNetworkPolicy   
+metadata:
+  name: allow-app2-to-app1-staging-dev
+  namespace: dev
+spec:
+  endpointSelector: 
+    matchLabels:
+      app: app1
+  ingress:
+  - fromEndpoints:
+    - matchLabels:
+        app: app2
+        k8s:io.kubernetes.pod.namespace: staging

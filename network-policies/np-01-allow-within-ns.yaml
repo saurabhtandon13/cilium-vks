@@ -1,0 +1,13 @@
+# In this policy we will demostrate that pods in dev namespace  can talk to each other without any restrictions, but they cannot talk to pods in other namespaces. 
+kind: CiliumNetworkPolicy
+metadata:
+  name: "l3-rule-policy"
+  namespace: dev
+spec:
+  endpointSelector:
+    matchLabels:
+      app: app1
+  ingress:
+  - fromEndpoints:
+    - matchLabels:
+        app: app2

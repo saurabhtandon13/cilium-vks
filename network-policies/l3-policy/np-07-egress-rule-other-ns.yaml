@@ -1,0 +1,15 @@
+# this rule will help in defining the egress rules for app1 in dev namespace to staging namespace
+apiVersion: cilium.io/v2
+kind: CiliumNetworkPolicy
+metadata:
+  name: app1-dev-egress-staging
+  namespace: dev
+spec:
+  endpointSelector:
+    matchLabels:
+      app: app1
+  egress:
+  - toEndpoints:
+    - matchLabels:
+        app: app2
+        k8s:io.kubernetes.pod.namespace: staging

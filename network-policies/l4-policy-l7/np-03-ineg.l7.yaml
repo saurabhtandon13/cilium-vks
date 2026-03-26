@@ -1,0 +1,23 @@
+# L7 Network Policy with Ingress and Egress rules
+apiVersion: cilium.io/v2
+kind: CiliumNetworkPolicy
+metadata:
+  name: np-03-ineg-l7
+  namespace: dev 
+spec:
+  endpointSelector:
+    matchLabels:
+      app: app1
+  egress:
+  - toEndpoints:
+    - matchLabels:
+        app: app2
+    toPorts:
+    - ports:
+      - port: "80"
+        protocol: TCP
+      rules:              # only GET requests are allowed to app2
+        http:
+        - method: GET
+          path: /auth
+          

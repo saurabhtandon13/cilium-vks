@@ -1,3 +1,24 @@
+apiVersion: addons.kubernetes.vmware.com/v1alpha1
+kind: AddonConfigDefinition
+metadata:
+  name: cilium.isovalent.com
+  namespace: vmware-system-vks-public
+spec:
+  templateOutputResources:
+    - targetClusterOutput:
+        apiVersion: v1
+        kind: Secret
+        name: '{{.Cluster.name}}-cilium-values'
+        namespace: vmware-system-tkg
+      template: |-
+        stringData:
+          values.yaml: |
+        {{ toYaml .Values | indent 4}}
+  schema:
+    openAPIV3Schema:
+      type: object
+      properties:
+---
 properties:
   MTU:
     type: integer

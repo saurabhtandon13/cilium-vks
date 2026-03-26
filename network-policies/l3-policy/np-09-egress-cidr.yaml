@@ -1,0 +1,21 @@
+# this policy will showcase how we can allow the CIDR range from the pod
+
+apiVersion: cilium.io/v2
+kind: CiliumNetworkPolicy 
+metadata:
+  name: allow-egress-to-cidr
+  namespace: dev
+spec:
+  endpointSelector:
+    matchLabels:
+      app: app1
+  egress:
+  - toCIDR:
+    - 10.0.0.0/24
+    - 10.96.1.0/24
+  # toCIDRSet is used to specify a CIDR range with exceptions. In the below example, we are allowing the CIDR range
+  # - toCIDRSet:
+  #    - cidr:
+  #       - 10.0.0.0/8
+  #      except:
+  #         - 10.100.0.0/24

@@ -1,0 +1,14 @@
+# this rule will help in defining the egress rules for app1in dev namespace.
+apiVersion: cilium.io/v2
+kind: CiliumNetworkPolicy
+metadata:
+  name: app1-dev-egress
+  namespace: dev
+spec:
+  endpointSelector:
+    matchLabels:
+      app: app1
+  egress:
+  - toEndpoints:
+    - matchLabels:
+        app: app2

@@ -1,0 +1,30 @@
+# This will help us defining the combination of L3 and L4 policies for egress traffic
+# We will allow egress traffic to a specific IP address and port, and we will also
+apiVersion: cilium.io/v2
+kind: CiliumNetworkPolicy
+metadata:
+  name: "egress-l3-i4-app1" 
+spec:
+  endpointSelector:
+    matchLabels:
+      app: app1
+  egress:
+  - toEnpoints:     # this will allow the egress traffic to coreDNS pods
+    - matchLabels:
+        k8s:io.kubernetes.pod.namespace: kube-system
+        app: kube-dns
+    - toPorts:        # this will allow the egress traffic to port 80
+       - ports:
+         - port: "53"
+           protocol: ANY
+         rules:
+           dns:
+             matchName: "abc.example.com" # Matching a specific domain name for DNS traffic
+             matchPattern: "*google.com" # Matching any subdomain of google.com for DNS traffic
+  - toEndpoints:
+    - matchLabels:
+        app: app2
+    - toPorts:
+      - ports:
+        - port: "80"
+          protocol: TCP
